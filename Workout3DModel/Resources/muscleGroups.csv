@@ -1,0 +1,211 @@
+Muscle,Muscle_ID,Head_Type,Head_Type_ID,Region,Muscle_Group,Muscle_Subname
+Sternocleidiomastoid,001,Sternocleidiomastoid Anterior Fibers,00101,Upper,Neck,
+Sternocleidiomastoid,001,Sternocleidiomastoid Anterior Fibers,00101,Upper,Neck,
+Sternocleidiomastoid,001,Sternocleidiomastoid Posterior Fibers,00102,Upper,Neck,
+Sternocleidiomastoid,001,Sternocleidiomastoid Posterior Fibers,00102,Upper,Neck,
+Splenius,002,Cervicis Spenius,00201,Upper,Neck,
+Splenius,002,Cervicis Spenius,00201,Upper,Neck,
+Splenius,002,Capitis Splenius,00202,Upper,Neck,
+Splenius,002,Capitis Splenius,00202,Upper,Neck,
+Anterior Deltoid,003,Anterior Deltoid,00301,Upper,Shoulders,Delts
+Anterior Deltoid,003,Anterior Deltoid,00301,Upper,Shoulders,Delts
+Lateral Deltoid,004,Lateral Deltoid,00401,Upper,Shoulders,Delts
+Lateral Deltoid,004,Lateral Deltoid,00401,Upper,Shoulders,Delts
+Posterior Deltoid,005,Posterior Deltoid,00501,Upper,Shoulders,Delts
+Posterior Deltoid,005,Posterior Deltoid,00501,Upper,Shoulders,Delts
+Supraspinatus,006,Supraspinatus,00601,Upper,Shoulders,Delts
+Supraspinatus,006,Supraspinatus,00601,Upper,Shoulders,Delts
+Triceps Brachii,007,Triceps Brachii Long Head,00701,Upper,Upper Arms,
+Triceps Brachii,007,Triceps Brachii Long Head,00701,Upper,Upper Arms,
+Triceps Brachii,007,Triceps Brachii Lateral Head,00702,Upper,Upper Arms,
+Triceps Brachii,007,Triceps Brachii Lateral Head,00702,Upper,Upper Arms,
+Triceps Brachii,007,Triceps Brachii Medial Head,00703,Upper,Upper Arms,
+Triceps Brachii,007,Triceps Brachii Medial Head,00703,Upper,Upper Arms,
+Biceps Brachii,008,Biceps Brachii Long Head,00801,Upper,Upper Arms,
+Biceps Brachii,008,Biceps Brachii Long Head,00801,Upper,Upper Arms,
+Biceps Brachii,008,Biceps Brachii Short Head,00802,Upper,Upper Arms,
+Biceps Brachii,008,Biceps Brachii Short Head,00802,Upper,Upper Arms,
+Brachialis,009,Brachialis,00901,Upper,Upper Arms,
+Brachialis,009,Brachialis,00901,Upper,Upper Arms,
+Brachioradialis,010,Brachioradialis,01001,Upper,Forearms,
+Brachioradialis,010,Brachioradialis,01001,Upper,Forearms,
+Wrist Flexors,011,Flexor Digitorum Superficialis,01101,Upper,Forearms,Wrists
+Wrist Flexors,011,Flexor Digitorum Superficialis,01101,Upper,Forearms,Wrists
+Wrist Flexors,011,Flexor Digitorum Profundus,01102,Upper,Forearms,Wrists
+Wrist Flexors,011,Flexor Digitorum Profundus,01102,Upper,Forearms,Wrists
+Wrist Flexors,011,Flexor Carpi Radialis,01103,Upper,Forearms,Wrists
+Wrist Flexors,011,Flexor Carpi Radialis,01103,Upper,Forearms,Wrists
+Wrist Flexors,011,Flexor Carpi Ulnaris,01104,Upper,Forearms,Wrists
+Wrist Flexors,011,Flexor Carpi Ulnaris,01104,Upper,Forearms,Wrists
+Wrist Flexors,011,Palmaris Longus,01105,Upper,Forearms,Wrists
+Wrist Flexors,011,Palmaris Longus,01105,Upper,Forearms,Wrists
+Wrist Flexors,011,Flexor Pollicis Longus,01106,Upper,Forearms,Wrists
+Wrist Flexors,011,Flexor Pollicis Longus,01106,Upper,Forearms,Wrists
+Wrist Extensors,012,Extensor Digitorum,01201,Upper,Forearms,Wrists
+Wrist Extensors,012,Extensor Digitorum,01201,Upper,Forearms,Wrists
+Wrist Extensors,012,Extensor Carpi Radialis Longus,01202,Upper,Forearms,Wrists
+Wrist Extensors,012,Extensor Carpi Radialis Longus,01202,Upper,Forearms,Wrists
+Wrist Extensors,012,Extensor Carpi Radialis Brevis,01203,Upper,Forearms,Wrists
+Wrist Extensors,012,Extensor Carpi Radialis Brevis,01203,Upper,Forearms,Wrists
+Wrist Extensors,012,Humeral Extensor Carpi Ulnaris,01204,Upper,Forearms,Wrists
+Wrist Extensors,012,Humeral Extensor Carpi Ulnaris,01204,Upper,Forearms,Wrists
+Wrist Extensors,012,Ulnar Extensor Carpi Ulnaris,01205,Upper,Forearms,Wrists
+Wrist Extensors,012,Ulnar Extensor Carpi Ulnaris,01205,Upper,Forearms,Wrists
+Wrist Extensors,012,Extensor Indicis,01206,Upper,Forearms,Wrists
+Wrist Extensors,012,Extensor Indicis,01206,Upper,Forearms,Wrists
+Wrist Extensors,012,Extensor Digiti Minimi,01207,Upper,Forearms,Wrists
+Wrist Extensors,012,Extensor Digiti Minimi,01207,Upper,Forearms,Wrists
+Wrist Extensors,012,Extensor Pollicis Longus,01208,Upper,Forearms,Wrists
+Wrist Extensors,012,Extensor Pollicis Longus,01208,Upper,Forearms,Wrists
+Wrist Extensors,012,Extensor Pollicis Brevis,01209,Upper,Forearms,Wrists
+Wrist Extensors,012,Extensor Pollicis Brevis,01209,Upper,Forearms,Wrists
+Pronator Teres,013,Pronator Teres Humeral Pronator,01301,Upper,Forearms,
+Pronator Teres,013,Pronator Teres Humeral Pronator,01301,Upper,Forearms,
+Pronator Teres,013,Pronator Teres Ulnar Pronator ,01302,Upper,Forearms,
+Pronator Teres,013,Pronator Teres Ulnar Pronator ,01302,Upper,Forearms,
+Supinators,014,Pronator Teres Humeral Supinator,01401,Upper,Forearms,
+Supinators,014,Pronator Teres Humeral Supinator,01401,Upper,Forearms,
+Supinators,014,Pronator Teres Ulnar Supinator,01402,Upper,Forearms,
+Supinators,014,Pronator Teres Ulnar Supinator,01402,Upper,Forearms,
+Latissimus Dorsi,015,Latissimus Dorsi,01501,Upper,Back,
+Latissimus Dorsi,015,Latissimus Dorsi,01501,Upper,Back,
+Teres Major,016,Teres Major,01601,Upper,Back,
+Teres Major,016,Teres Major,01601,Upper,Back,
+Upper Trapezius,017,Upper Trapezius Upper Fibers,01701,Upper,Back,Traps
+Upper Trapezius,017,Upper Trapezius Upper Fibers,01701,Upper,Back,Traps
+Middle Trapezius,018,Middle Trapezius Middle Fibers,01801,Upper,Back,Traps
+Middle Trapezius,018,Middle Trapezius Middle Fibers,01801,Upper,Back,Traps
+Lower Trapezius,019,Lower Trapezius Lower Fibers,01901,Upper,Back,Traps
+Lower Trapezius,019,Lower Trapezius Lower Fibers,01901,Upper,Back,Traps
+Levator Scapulae,020,Levator Scapulae,02001,Upper,Back,
+Levator Scapulae,020,Levator Scapulae,02001,Upper,Back,
+Rhomboids,021,Rhomboids Minor,02101,Upper,Back,
+Rhomboids,021,Rhomboids Minor,02101,Upper,Back,
+Rhomboids,021,Rhomboids Major,02102,Upper,Back,
+Rhomboids,021,Rhomboids Major,02102,Upper,Back,
+Infraspinatus,022,Infraspinatus Superior,02201,Upper,Back,
+Infraspinatus,022,Infraspinatus Superior,02201,Upper,Back,
+Infraspinatus,022,Infraspinatus Middle,02202,Upper,Back,
+Infraspinatus,022,Infraspinatus Middle,02202,Upper,Back,
+Infraspinatus,022,Infraspinatus Inferior,02203,Upper,Back,
+Infraspinatus,022,Infraspinatus Inferior,02203,Upper,Back,
+Teres Minor,023,Teres Minor,02301,Upper,Back,
+Teres Minor,023,Teres Minor,02301,Upper,Back,
+Subscapularis,024,Subscapularis Superior,02401,Upper,Back,
+Subscapularis,024,Subscapularis Superior,02401,Upper,Back,
+Subscapularis,024,Subscapularis Middle,02402,Upper,Back,
+Subscapularis,024,Subscapularis Middle,02402,Upper,Back,
+Subscapularis,024,Subscapularis Inferior,02403,Upper,Back,
+Subscapularis,024,Subscapularis Inferior,02403,Upper,Back,
+Sternal Pectoralis Major,025,Sternal Pectoralis Major Sternal Head,02501,Upper,Chest,Pecs
+Sternal Pectoralis Major,025,Sternal Pectoralis Major Sternal Head,02501,Upper,Chest,Pecs
+Clavicular Pectoralis Major,026,Clavicular Pectoralis Major Clavicular Head,02601,Upper,Chest,Pecs
+Clavicular Pectoralis Major,026,Clavicular Pectoralis Major Clavicular Head,02601,Upper,Chest,Pecs
+Pectoralis Minor,027,Pectoralis Minor Medial Head,02701,Upper,Chest,Pecs
+Pectoralis Minor,027,Pectoralis Minor Medial Head,02701,Upper,Chest,Pecs
+Pectoralis Minor,027,Pectoralis Minor Posterior Head,02702,Upper,Chest,Pecs
+Pectoralis Minor,027,Pectoralis Minor Posterior Head,02702,Upper,Chest,Pecs
+Pectoralis Minor,027,Pectoralis Minor Lateral Head ,02703,Upper,Chest,Pecs
+Pectoralis Minor,027,Pectoralis Minor Lateral Head ,02703,Upper,Chest,Pecs
+Serratus Anterior,028,Serratus Anterior Superior,02801,Upper,Chest,
+Serratus Anterior,028,Serratus Anterior Superior,02801,Upper,Chest,
+Serratus Anterior,028,Serratus Anterior Anterior,02802,Upper,Chest,
+Serratus Anterior,028,Serratus Anterior Anterior,02802,Upper,Chest,
+Serratus Anterior,028,Serratus Anterior Inferior,02803,Upper,Chest,
+Serratus Anterior,028,Serratus Anterior Inferior,02803,Upper,Chest,
+Rectus Abdominis,029,Rectus Abdominus,02901,Core,Waist,
+Rectus Abdominis,029,Rectus Abdominus,02901,Core,Waist,
+Transverse Abdominis,030,Transverse Abdominis,03001,Core,Waist,
+Transverse Abdominis,030,Transverse Abdominis,03001,Core,Waist,
+Obliques,031,External Oblique,03101,Core,Waist,
+Obliques,031,External Oblique,03101,Core,Waist,
+Obliques,031,Internal Oblique,03102,Core,Waist,
+Obliques,031,Internal Oblique,03102,Core,Waist,
+Quadratus Lumborum,032,Quadratus Lumborum,03201,Core,Waist,
+Quadratus Lumborum,032,Quadratus Lumborum,03201,Core,Waist,
+Erector Spinae,033,Erector Spinae iliocastalis,03301,Core,Waist,
+Erector Spinae,033,Erector Spinae iliocastalis,03301,Core,Waist,
+Erector Spinae,033,Erector Spinae longissimus,03302,Core,Waist,
+Erector Spinae,033,Erector Spinae longissimus,03302,Core,Waist,
+Erector Spinae,033,Erector Spinae spinalis,03303,Core,Waist,
+Erector Spinae,033,Erector Spinae spinalis,03303,Core,Waist,
+Gluteus Maximus,034,Gluteus Maximus Upper Fibers,03401,Lower,Hips,Hip Adductors
+Gluteus Maximus,034,Gluteus Maximus Upper Fibers,03401,Lower,Hips,Hip Adductors
+Gluteus Maximus,034,Gluteus Maximus Lower Fibers,03402,Lower,Hips,Hip Adductors
+Gluteus Maximus,034,Gluteus Maximus Lower Fibers,03402,Lower,Hips,Hip Adductors
+Gluteus Medius,035,Gluteus Medius Anterior Fibers,03501,Lower,Hips,Hip Adductors
+Gluteus Medius,035,Gluteus Medius Anterior Fibers,03501,Lower,Hips,Hip Adductors
+Gluteus Medius,035,Gluteus Medius Posterior Fibers,03502,Lower,Hips,Hip Adductors
+Gluteus Medius,035,Gluteus Medius Posterior Fibers,03502,Lower,Hips,Hip Adductors
+Gluteus Minimus,036,Gluteus Minimus,03601,Lower,Hips,Hip Adductors
+Gluteus Minimus,036,Gluteus Minimus,03601,Lower,Hips,Hip Adductors
+Tensor Fascie Latae,037,Tensor Fasciae Latae,03701,Lower,Hips,Hip Adductors
+Tensor Fascie Latae,037,Tensor Fasciae Latae,03701,Lower,Hips,Hip Adductors
+Iliopsoas,038,Iliopsoas Iliacus,03801,Lower,Hips,Hip Flexors
+Iliopsoas,038,Iliopsoas Iliacus,03801,Lower,Hips,Hip Flexors
+Iliopsoas,038,Iliopsoas Psoas,03802,Lower,Hips,Hip Flexors
+Iliopsoas,038,Iliopsoas Psoas,03802,Lower,Hips,Hip Flexors
+Sartorius,039,Sartorius,03901,Lower,Hips,Hip Flexors
+Sartorius,039,Sartorius,03901,Lower,Hips,Hip Flexors
+Rectus Femoris,040,Rectus Femoris,04001,Lower,Hips,Hip Flexors
+Rectus Femoris,040,Rectus Femoris,04001,Lower,Hips,Hip Flexors
+Rectus Femoris,040,Rectus Femoris Vastus Laateralis (Externus),04002,Lower,Hips,Hip Flexors
+Rectus Femoris,040,Rectus Femoris Vastus Laateralis (Externus),04002,Lower,Hips,Hip Flexors
+Rectus Femoris,040,Rectus Femoris Vastus Intermedius,04003,Lower,Hips,Hip Flexors
+Rectus Femoris,040,Rectus Femoris Vastus Intermedius,04003,Lower,Hips,Hip Flexors
+Rectus Femoris,040,Rectus Femoris Vastus Medialis (Internus),04004,Lower,Hips,Hip Flexors
+Rectus Femoris,040,Rectus Femoris Vastus Medialis (Internus),04004,Lower,Hips,Hip Flexors
+Pectineus,041,Pectineus,04101,Lower,Hips,Hip Flexors
+Pectineus,041,Pectineus,04101,Lower,Hips,Hip Flexors
+Deep External Rotators,042,Deep External Rotators Piriformis,04201,Lower,Hips,
+Deep External Rotators,042,Deep External Rotators Piriformis,04201,Lower,Hips,
+Deep External Rotators,042,Deep External Rotators Gemellus Superior,04202,Lower,Hips,
+Deep External Rotators,042,Deep External Rotators Gemellus Superior,04202,Lower,Hips,
+Deep External Rotators,042,Deep External Rotators Obturator Internus,04203,Lower,Hips,
+Deep External Rotators,042,Deep External Rotators Obturator Internus,04203,Lower,Hips,
+Deep External Rotators,042,Deep External Rotators Gemellus Inferior,04204,Lower,Hips,
+Deep External Rotators,042,Deep External Rotators Gemellus Inferior,04204,Lower,Hips,
+Deep External Rotators,042,Deep External Rotators Obturator Externus,04205,Lower,Hips,
+Deep External Rotators,042,Deep External Rotators Obturator Externus,04205,Lower,Hips,
+Deep External Rotators,042,Deep External Rotators Quadratus Femoris,04206,Lower,Hips,
+Deep External Rotators,042,Deep External Rotators Quadratus Femoris,04206,Lower,Hips,
+Quadriceps,043,Quadraiceps Rectus Femoris,04301,Lower,Thighs,
+Quadriceps,043,Quadraiceps Rectus Femoris,04301,Lower,Thighs,
+Quadriceps,043,Quadraiceps Vastus Lateralis (Externus),04302,Lower,Thighs,
+Quadriceps,043,Quadraiceps Vastus Lateralis (Externus),04302,Lower,Thighs,
+Quadriceps,043,Quadraiceps Vastus Intermedius,04303,Lower,Thighs,
+Quadriceps,043,Quadraiceps Vastus Intermedius,04303,Lower,Thighs,
+Quadriceps,043,Quadraiceps Vastus Medialis (Internus),04304,Lower,Thighs,
+Quadriceps,043,Quadraiceps Vastus Medialis (Internus),04304,Lower,Thighs,
+Hamstrings,044,Hamstrings Biceps Femoris Long Head,04401,Lower,Thighs,
+Hamstrings,044,Hamstrings Biceps Femoris Long Head,04401,Lower,Thighs,
+Hamstrings,044,Hamstrings Biceps Femoris Short Head,04402,Lower,Thighs,
+Hamstrings,044,Hamstrings Biceps Femoris Short Head,04402,Lower,Thighs,
+Hamstrings,044,Hamstrings Semitendinosus,04403,Lower,Thighs,
+Hamstrings,044,Hamstrings Semitendinosus,04403,Lower,Thighs,
+Hamstrings,044,Hamstrings Semimembranosus,04404,Lower,Thighs,
+Hamstrings,044,Hamstrings Semimembranosus,04404,Lower,Thighs,
+Adductors,045,Adductor Brevis,04501,Lower,Thighs,Hip Adductors
+Adductors,045,Adductor Brevis,04501,Lower,Thighs,Hip Adductors
+Adductors,045,Adductor Longus,04502,Lower,Thighs,Hip Adductors
+Adductors,045,Adductor Longus,04502,Lower,Thighs,Hip Adductors
+Adductors,045,Adductor Magnus,04503,Lower,Thighs,Hip Adductors
+Adductors,045,Adductor Magnus,04503,Lower,Thighs,Hip Adductors
+Gracilis ,046,Gracilis,04601,Lower,Thighs,Hip Adductors
+Gracilis ,046,Gracilis,04601,Lower,Thighs,Hip Adductors
+Adductor Magnus,047,Adductor Brevis,04701,Lower,Thighs,
+Adductor Magnus,047,Adductor Brevis,04701,Lower,Thighs,
+Adductor Magnus,047,Adductor Longus,04702,Lower,Thighs,
+Adductor Magnus,047,Adductor Longus,04702,Lower,Thighs,
+Adductor Magnus,047,Adductor Magnus,04703,Lower,Thighs,
+Adductor Magnus,047,Adductor Magnus,04703,Lower,Thighs,
+Gastrocnemius,048,Gastrocnemius Medial Head,04801,Lower,Calves,
+Gastrocnemius,048,Gastrocnemius Medial Head,04801,Lower,Calves,
+Gastrocnemius,048,Gastrocnemius Lateral Head,04802,Lower,Calves,
+Gastrocnemius,048,Gastrocnemius Lateral Head,04802,Lower,Calves,
+Soleus,049,Soleus,04901,Lower,Calves,
+Soleus,049,Soleus,04901,Lower,Calves,
+Tibialis Anterior,050,Tibialis Anterior,05001,Lower,Calves,
+Tibialis Anterior,050,Tibialis Anterior,05001,Lower,Calves,
+Popilteus,051,Popliteus,05101,Lower,Calves,
+Popilteus,051,Popliteus,05101,Lower,Calves,
