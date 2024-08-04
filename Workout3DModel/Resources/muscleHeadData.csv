@@ -1,0 +1,211 @@
+Muscle,Muscle_ID,Head_Type,Head_Type_ID,Unique_Head,Unique_Head_ID,Chirality_Flag,Model_Reference_Name,Modele_Reference_ID
+Sternocleidiomastoid,001,Sternocleidiomastoid Anterior Fibers,00101,Sternocleidiomastoid Anterior Fibers Left,001011,T,Sternocleidomastoid_muscle_left,001
+Sternocleidiomastoid,001,Sternocleidiomastoid Anterior Fibers,00101,Sternocleidiomastoid Anterior Fibers Right,001012,T,Sternocleidomastoid_muscle_right,002
+Sternocleidiomastoid,001,Sternocleidiomastoid Posterior Fibers,00102,Sternocleidiomastoid Posterior Fibers Left,001021,T,Sternocleidomastoid_muscle_left,003
+Sternocleidiomastoid,001,Sternocleidiomastoid Posterior Fibers,00102,Sternocleidiomastoid Posterior Fibers Right,001022,T,Sternoclediomastoid_muscle_right,004
+Splenius,002,Cervicis Spenius,00201,Cervicis Spenius Left,002011,T,Splenius_colli_muscle_left,005
+Splenius,002,Cervicis Spenius,00201,Cervicis Spenius Right,002012,T,Splenius_colli_muscle_right,006
+Splenius,002,Capitis Splenius,00202,Capitis Splenius Left,002021,T,Splenius_capitis_muscle_left,007
+Splenius,002,Capitis Splenius,00202,Capitis Splenius Right,002022,T,Splenius_capitis_muscle_right,008
+Anterior Deltoid,003,Anterior Deltoid,00301,Anterior Deltoid Left,003011,T,Clavicular_part_of_deltoid_muscle_left,009
+Anterior Deltoid,003,Anterior Deltoid,00301,Anterior Deltoid Right,003012,T,Clavicular_part_of_deltoid_muscle_right,010
+Lateral Deltoid,004,Lateral Deltoid,00401,Lateral Deltoid Left,004011,T,Acromial_part_of_deltoid_muscle_left,011
+Lateral Deltoid,004,Lateral Deltoid,00401,Lateral Deltoid Right,004012,T,Acromial_part_of_deltoid_muscle_right,012
+Posterior Deltoid,005,Posterior Deltoid,00501,Posterior Deltoid Left,005011,T,Scapular_spinal_part_of_deltoid_muscle_left,013
+Posterior Deltoid,005,Posterior Deltoid,00501,Posterior Deltoid Right,005012,T,Scapular_spinal_part_of_deltoid_muscle_right,014
+Supraspinatus,006,Supraspinatus,00601,Supraspinatus Left,006011,T,Supraspinatus_muscle_left,015
+Supraspinatus,006,Supraspinatus,00601,Supraspinatus Right,006012,T,Supraspinatus_muscle_right,016
+Triceps Brachii,007,Triceps Brachii Long Head,00701,Triceps Brachii Long Head Left,007011,T,Long_head_of_triceps_brachii_left,017
+Triceps Brachii,007,Triceps Brachii Long Head,00701,Triceps Brachii Long Head Right,007012,T,Long_head_of_triceps_brachii_right,018
+Triceps Brachii,007,Triceps Brachii Lateral Head,00702,Triceps Brachii Lateral Head Left,007021,T,Lateral_head_of_triceps_brachii_left,019
+Triceps Brachii,007,Triceps Brachii Lateral Head,00702,Triceps Brachii Lateral Head Right,007022,T,Lateral_head_of_triceps_brachii_right,020
+Triceps Brachii,007,Triceps Brachii Medial Head,00703,Triceps Brachii Medial Head Left,007031,T,Medial_head_of_triceps_brachii_left,021
+Triceps Brachii,007,Triceps Brachii Medial Head,00703,Triceps Brachii Medial Head Right,007032,T,Medial_head_of_triceps_brachii_right,022
+Biceps Brachii,008,Biceps Brachii Long Head,00801,Biceps Brachii Long Head Left,008011,T,Long_head_of_biceps_brachii_left,023
+Biceps Brachii,008,Biceps Brachii Long Head,00801,Biceps Brachii Long Head Right,008012,T,Long_head_of_biceps_brachii_right,024
+Biceps Brachii,008,Biceps Brachii Short Head,00802,Biceps Brachii Short Head Left,008021,T,Short_head_of_biceps_brachii_left,025
+Biceps Brachii,008,Biceps Brachii Short Head,00802,Biceps Brachii Short Head Right,008022,T,Short_head_of_biceps_brachii_right,026
+Brachialis,009,Brachialis,00901,Brachialis Left,009011,T,Short_head_of_biceps_brachii_left,027
+Brachialis,009,Brachialis,00901,Brachialis Right,009012,T,Short_head_of_biceps_brachii_right,028
+Brachioradialis,010,Brachioradialis,01001,Brachioradialis Left,010011,T,Brachioradialis_muscle_left,029
+Brachioradialis,010,Brachioradialis,01001,Brachioradialis Right,010012,T,Brachioradialis_muscle_right,030
+Wrist Flexors,011,Flexor Digitorum Superficialis,01101,Flexor Digitorum Superficialis Left,011011,T,Humero-ulnar_head_of_flexor_digitorum_superficialis_left,031
+Wrist Flexors,011,Flexor Digitorum Superficialis,01101,Flexor Digitorum Superficialis Right,011012,T,Humero-ulnar_head_of_flexor_digitorum_superficialis_right,032
+Wrist Flexors,011,Flexor Digitorum Profundus,01102,Flexor Digitorum Profundus Left,011021,T,Flexor_digitorum_profundus_left,033
+Wrist Flexors,011,Flexor Digitorum Profundus,01102,Flexor Digitorum Profundus Right,011022,T,Flexor_digitorum_profundus_right,034
+Wrist Flexors,011,Flexor Carpi Radialis,01103,Flexor Carpi Radialis Left,011031,T,Flexor_carpi_radialis_left,035
+Wrist Flexors,011,Flexor Carpi Radialis,01103,Flexor Carpi Radialis Right,011032,T,Flexor_carpi_radialis_right,036
+Wrist Flexors,011,Flexor Carpi Ulnaris,01104,Flexor Carpi Ulnaris Left,011041,T,Ulnar_head_of_flexor_carpi_ulnaris_left,037
+Wrist Flexors,011,Flexor Carpi Ulnaris,01104,Flexor Carpi Ulnaris Right,011042,T,Ulnar_head_of_flexor_carpi_ulnaris_right,038
+Wrist Flexors,011,Palmaris Longus,01105,Palmaris Longus Left,011051,T,Palmaris_longus_muscle_left,039
+Wrist Flexors,011,Palmaris Longus,01105,Palmaris Longus Right,011052,T,Palmaris_longus_muscle_right,040
+Wrist Flexors,011,Flexor Pollicis Longus,01106,Flexor Pollicis Longus Left,011061,T,Flexor_pollicis_longus_left,041
+Wrist Flexors,011,Flexor Pollicis Longus,01106,Flexor Pollicis Longus Right,011062,T,Flexor_pollicis_longus_right,042
+Wrist Extensors,012,Extensor Digitorum,01201,Extensor Digitorum Left,012011,T,Extensor_digitorum_left,043
+Wrist Extensors,012,Extensor Digitorum,01201,Extensor Digitorum Right,012012,T,Extensor_digitorum_right,044
+Wrist Extensors,012,Extensor Carpi Radialis Longus,01202,Extensor Carpi Radialis Longus Left,012021,T,Extensor_carpi_radialis_longus_left,045
+Wrist Extensors,012,Extensor Carpi Radialis Longus,01202,Extensor Carpi Radialis Longus Right,012022,T,Extensor_carpi_radialis_longus_right,046
+Wrist Extensors,012,Extensor Carpi Radialis Brevis,01203,Extensor Carpi Radialis Brevis Left,012031,T,Extensor_carpi_radialis_brevis_left,047
+Wrist Extensors,012,Extensor Carpi Radialis Brevis,01203,Extensor Carpi Radialis Brevis Right,012032,T,Extensor_carpi_radialis_brevis_right,048
+Wrist Extensors,012,Humeral Extensor Carpi Ulnaris,01204,Humeral Extensor Carpi Ulnaris Left,012041,T,Humeral_head_of_extensor_carpi_ulnaris_left,049
+Wrist Extensors,012,Humeral Extensor Carpi Ulnaris,01204,Humeral Extensor Carpi Ulnaris Right,012042,T,Humeral_head_of_extensor_carpi_ulnaris_right,050
+Wrist Extensors,012,Ulnar Extensor Carpi Ulnaris,01205,Ulnar Extensor Carpi Ulnaris Left,012051,T,Ulnar_head_of_extensor_carpi_ulnaris_left,051
+Wrist Extensors,012,Ulnar Extensor Carpi Ulnaris,01205,Ulnar Extensor Carpi Ulnaris Right,012052,T,Ulnar_head_of_extensor_carpi_ulnaris_right,052
+Wrist Extensors,012,Extensor Indicis,01206,Extensor Indicis Left,012061,T,Extensor_indicis_left,053
+Wrist Extensors,012,Extensor Indicis,01206,Extensor Indicis Right,012062,T,Extensor_indicis_right,054
+Wrist Extensors,012,Extensor Digiti Minimi,01207,Extensor Digiti Minimi Left,012071,T,Extensor_digiti_minimi_left,055
+Wrist Extensors,012,Extensor Digiti Minimi,01207,Extensor Digiti Minimi Right,012072,T,Extensor_digiti_minimi_right,056
+Wrist Extensors,012,Extensor Pollicis Longus,01208,Extensor Pollicis Longus Left,012081,T,Extensor_pollicis_longus_left,057
+Wrist Extensors,012,Extensor Pollicis Longus,01208,Extensor Pollicis Longus Right,012082,T,Extensor_pollicis_longus_right,058
+Wrist Extensors,012,Extensor Pollicis Brevis,01209,Extensor Pollicis Brevis Left,012091,T,Extensor_pollicis_brevis_left,059
+Wrist Extensors,012,Extensor Pollicis Brevis,01209,Extensor Pollicis Brevis Right,012092,T,Extensor_pollicis_brevis_right,060
+Pronator Teres,013,Pronator Teres Humeral Pronator,01301,Pronator Teres Humeral Pronator Left,013011,T,Superficial_head_of_pronator_teres_left,061
+Pronator Teres,013,Pronator Teres Humeral Pronator,01301,Pronator Teres Humeral Pronator Right,013012,T,Superficial_head_of_pronator_teres_right,062
+Pronator Teres,013,Pronator Teres Ulnar Pronator ,01302,Pronator Teres Ulnar Pronator  Left,013021,T,Deep_head_of_pronator_teres_left,063
+Pronator Teres,013,Pronator Teres Ulnar Pronator ,01302,Pronator Teres Ulnar Pronator  Right,013022,T,Deep_head_of_pronator_teres_right,064
+Supinators,014,Pronator Teres Humeral Supinator,01401,Pronator Teres Humeral Supinator Left,014011,T,Supinator_left,065
+Supinators,014,Pronator Teres Humeral Supinator,01401,Pronator Teres Humeral Supinator Right,014012,T,Supinator_right,066
+Supinators,014,Pronator Teres Ulnar Supinator,01402,Pronator Teres Ulnar Supinator Left,014021,T,Supinator_left,067
+Supinators,014,Pronator Teres Ulnar Supinator,01402,Pronator Teres Ulnar Supinator Right,014022,T,Supinator_right,068
+Latissimus Dorsi,015,Latissimus Dorsi,01501,Latissimus Dorsi Left,015011,T,Latissimus_dorsi_muscle_left,069
+Latissimus Dorsi,015,Latissimus Dorsi,01501,Latissimus Dorsi Right,015012,T,Latissimus_dorsi_muscle_right,070
+Teres Major,016,Teres Major,01601,Teres Major Left,016011,T,Teres_major_muscle_left,071
+Teres Major,016,Teres Major,01601,Teres Major Right,016012,T,Teres_major_muscle_right,072
+Upper Trapezius,017,Upper Trapezius Upper Fibers,01701,Upper Trapezius Upper Fibers Left,017011,T,Descending_part_of_trapezius_muscle_left,073
+Upper Trapezius,017,Upper Trapezius Upper Fibers,01701,Upper Trapezius Upper Fibers Right,017012,T,Descending_part_of_trapezius_muscle_right,074
+Middle Trapezius,018,Middle Trapezius Middle Fibers,01801,Middle Trapezius Middle Fibers Left,018011,T,Transverse_part_of_trapezius_muscle_left,075
+Middle Trapezius,018,Middle Trapezius Middle Fibers,01801,Middle Trapezius Middle Fibers Right,018012,T,Transverse_part_of_trapezius_muscle_right,076
+Lower Trapezius,019,Lower Trapezius Lower Fibers,01901,Lower Trapezius Lower Fibers Left,019011,T,Ascending_part_of_trapezius_muscle_left,077
+Lower Trapezius,019,Lower Trapezius Lower Fibers,01901,Lower Trapezius Lower Fibers Right,019012,T,Ascending_part_of_trapezius_muscle_right,078
+Levator Scapulae,020,Levator Scapulae,02001,Levator Scapulae Left,020011,T,Levator_scapulae_left,079
+Levator Scapulae,020,Levator Scapulae,02001,Levator Scapulae Right,020012,T,Levator_scapulae_right,080
+Rhomboids,021,Rhomboids Minor,02101,Rhomboids Minor Left,021011,T,Rhomboid_minor_muscle_left,081
+Rhomboids,021,Rhomboids Minor,02101,Rhomboids Minor Right,021012,T,Rhomboid_minor_muscle_right,082
+Rhomboids,021,Rhomboids Major,02102,Rhomboids Major Left,021021,T,Rhomboid_major_muscle_left,083
+Rhomboids,021,Rhomboids Major,02102,Rhomboids Major Right,021022,T,Rhomboid_major_muscle_right,084
+Infraspinatus,022,Infraspinatus Superior,02201,Infraspinatus Superior Left,022011,T,Infraspinatus_muscle_left,085
+Infraspinatus,022,Infraspinatus Superior,02201,Infraspinatus Superior Right,022012,T,Infraspinatus_muscle_right,086
+Infraspinatus,022,Infraspinatus Middle,02202,Infraspinatus Middle Left,022021,T,Infraspinatus_muscle_left,087
+Infraspinatus,022,Infraspinatus Middle,02202,Infraspinatus Middle Right,022022,T,Infraspinatus_muscle_right,088
+Infraspinatus,022,Infraspinatus Inferior,02203,Infraspinatus Inferior Left,022031,T,Infraspinatus_muscle_left,089
+Infraspinatus,022,Infraspinatus Inferior,02203,Infraspinatus Inferior Right,022032,T,Infraspinatus_muscle_right,090
+Teres Minor,023,Teres Minor,02301,Teres Minor Left,023011,T,Teres_minor_muscle_left,091
+Teres Minor,023,Teres Minor,02301,Teres Minor Right,023012,T,Teres_minor_muscle_right,092
+Subscapularis,024,Subscapularis Superior,02401,Subscapularis Superior Left,024011,T,Subscapularis_muscle_left,093
+Subscapularis,024,Subscapularis Superior,02401,Subscapularis Superior Right,024012,T,Subscapularis_muscle_right,094
+Subscapularis,024,Subscapularis Middle,02402,Subscapularis Middle Left,024021,T,Subscapularis_muscle_left,095
+Subscapularis,024,Subscapularis Middle,02402,Subscapularis Middle Right,024022,T,Subscapularis_muscle_right,096
+Subscapularis,024,Subscapularis Inferior,02403,Subscapularis Inferior Left,024031,T,Subscapularis_muscle_left,097
+Subscapularis,024,Subscapularis Inferior,02403,Subscapularis Inferior Right,024032,T,Subscapularis_muscle_right,098
+Sternal Pectoralis Major,025,Sternal Pectoralis Major Sternal Head,02501,Sternal Pectoralis Major Sternal Head Left,025011,T,Sternocostal_head_of_pectoralis_major_muscle_left,099
+Sternal Pectoralis Major,025,Sternal Pectoralis Major Sternal Head,02501,Sternal Pectoralis Major Sternal Head Right,025012,T,Sternocostal_head_of_pectoralis_major_muscle_right,100
+Clavicular Pectoralis Major,026,Clavicular Pectoralis Major Clavicular Head,02601,Clavicular Pectoralis Major Clavicular Head Left,026011,T,Clavicular_head_of_pectoralis_major_muscle_left,101
+Clavicular Pectoralis Major,026,Clavicular Pectoralis Major Clavicular Head,02601,Clavicular Pectoralis Major Clavicular Head Right,026012,T,Clavicular_head_of_pectoralis_major_muscle_right,102
+Pectoralis Minor,027,Pectoralis Minor Medial Head,02701,Pectoralis Minor Medial Head Left,027011,T,Pectoralis_minor_muscle_right,103
+Pectoralis Minor,027,Pectoralis Minor Medial Head,02701,Pectoralis Minor Medial Head Right,027012,T,Pectoralis_minor_muscle_right,104
+Pectoralis Minor,027,Pectoralis Minor Posterior Head,02702,Pectoralis Minor Posterior Head Left,027021,T,Pectoralis_minor_muscle_right,105
+Pectoralis Minor,027,Pectoralis Minor Posterior Head,02702,Pectoralis Minor Posterior Head Right,027022,T,Pectoralis_minor_muscle_right,106
+Pectoralis Minor,027,Pectoralis Minor Lateral Head ,02703,Pectoralis Minor Lateral Head  Left,027031,T,Pectoralis_minor_muscle_right,107
+Pectoralis Minor,027,Pectoralis Minor Lateral Head ,02703,Pectoralis Minor Lateral Head  Right,027032,T,Pectoralis_minor_muscle_right,108
+Serratus Anterior,028,Serratus Anterior Superior,02801,Serratus Anterior Superior Left,028011,T,Serratus_posterior_superior_muscle_left,109
+Serratus Anterior,028,Serratus Anterior Superior,02801,Serratus Anterior Superior Right,028012,T,Serratus_posterior_superior_muscle_right,110
+Serratus Anterior,028,Serratus Anterior Anterior,02802,Anterior Left,028021,T,Serratus_anterior_muscle_left,111
+Serratus Anterior,028,Serratus Anterior Anterior,02802,Anterior Right,028022,T,Serratus_anterior_muscle_right,112
+Serratus Anterior,028,Serratus Anterior Inferior,02803,Serratus Anterior Inferior Left,028031,T,Serratus_posterior_inferior_muscle_left,113
+Serratus Anterior,028,Serratus Anterior Inferior,02803,Serratus Anterior Inferior Right,028032,T,Serratus_posterior_inferior_muscle_right,114
+Rectus Abdominis,029,Rectus Abdominus,02901,Rectus Abdominus Left,029011,T,Rectus_abdominis_muscle_left,115
+Rectus Abdominis,029,Rectus Abdominus,02901,Rectus Abdominus Right,029012,T,Rectus_abdominis_muscle_right,116
+Transverse Abdominis,030,Transverse Abdominis,03001,Transverse Abdominis Left,030011,T,Transversus_abdominis_muscle_left,117
+Transverse Abdominis,030,Transverse Abdominis,03001,Transverse Abdominis Right,030012,T,Transversus_abdominis_muscle_right,118
+Obliques,031,External Oblique,03101,External Oblique Left,031011,T,External_oblique_left,119
+Obliques,031,External Oblique,03101,External Oblique Right,031012,T,External_oblique_right,120
+Obliques,031,Internal Oblique,03102,Internal Oblique Left,031021,T,Internal_oblique_left,121
+Obliques,031,Internal Oblique,03102,Internal Oblique Right,031022,T,Internal_oblique_right,122
+Quadratus Lumborum,032,Quadratus Lumborum,03201,Quadratus Lumborum Left,032011,T,Quadratus_lumborum_muscle_left,123
+Quadratus Lumborum,032,Quadratus Lumborum,03201,Quadratus Lumborum Right,032012,T,Quadratus_lumborum_muscle_right,124
+Erector Spinae,033,Erector Spinae iliocastalis,03301,Erector Spinae iliocastalis Left,033011,T,Iliocostalis_muscle_left,125
+Erector Spinae,033,Erector Spinae iliocastalis,03301,Erector Spinae iliocastalis Right,033012,T,Iliocostalis_muscle_right,126
+Erector Spinae,033,Erector Spinae longissimus,03302,Erector Spinae longissimus Left,033021,T,Longissimus_muscle_left,127
+Erector Spinae,033,Erector Spinae longissimus,03302,Erector Spinae longissimus Right,033022,T,Longissimus_muscle_right,128
+Erector Spinae,033,Erector Spinae spinalis,03303,Erector Spinae spinalis Left,033031,T,Semispinalis_muscle_left,129
+Erector Spinae,033,Erector Spinae spinalis,03303,Erector Spinae spinalis Right,033032,T,Semispinalis_muscle_right,130
+Gluteus Maximus,034,Gluteus Maximus Upper Fibers,03401,Gluteus Maximus Upper Fibers Left,034011,T,Gluteus_maximus_muscle_left,131
+Gluteus Maximus,034,Gluteus Maximus Upper Fibers,03401,Gluteus Maximus Upper Fibers Right,034012,T,Gluteus_maximus_muscle_right,132
+Gluteus Maximus,034,Gluteus Maximus Lower Fibers,03402,Gluteus Maximus Lower Fibers Left,034021,T,Gluteus_maximus_muscle_left,133
+Gluteus Maximus,034,Gluteus Maximus Lower Fibers,03402,Gluteus Maximus Lower Fibers Right,034022,T,Gluteus_maximus_muscle_right,134
+Gluteus Medius,035,Gluteus Medius Anterior Fibers,03501,Gluteus Medius Anterior Fibers Left,035011,T,Gluteus_medius_muscle_left,135
+Gluteus Medius,035,Gluteus Medius Anterior Fibers,03501,Gluteus Medius Anterior Fibers Right,035012,T,Gluteus_medius_muscle_right,136
+Gluteus Medius,035,Gluteus Medius Posterior Fibers,03502,Gluteus Medius Posterior Fibers Left,035021,T,Gluteus_medius_muscle_left,137
+Gluteus Medius,035,Gluteus Medius Posterior Fibers,03502,Gluteus Medius Posterior Fibers Right,035022,T,Gluteus_medius_muscle_right,138
+Gluteus Minimus,036,Gluteus Minimus,03601,Gluteus Minimus Left,036011,T,Gluteus_minimus_muscle_left,139
+Gluteus Minimus,036,Gluteus Minimus,03601,Gluteus Minimus Right,036012,T,Gluteus_minimus_muscle_right,140
+Tensor Fascie Latae,037,Tensor Fasciae Latae,03701,Tensor Fasciae Latae Left,037011,T,Tensor_fasciae_latae_left,141
+Tensor Fascie Latae,037,Tensor Fasciae Latae,03701,Tensor Fasciae Latae Right,037012,T,Tensor_fasciae_latae_right,142
+Iliopsoas,038,Iliopsoas Iliacus,03801,Iliopsoas Iliacus Left,038011,T,Iliopsoas_fascia_left,143
+Iliopsoas,038,Iliopsoas Iliacus,03801,Iliopsoas Iliacus Right,038012,T,Iliopsoas_fascia_right,144
+Iliopsoas,038,Iliopsoas Psoas,03802,Iliopsoas Psoas Left,038021,T,Psoas_major_left,145
+Iliopsoas,038,Iliopsoas Psoas,03802,Iliopsoas Psoas Right,038022,T,Psoas_major_right,146
+Sartorius,039,Sartorius,03901,Sartorius Left,039011,T,Sartorius_muscle_left,147
+Sartorius,039,Sartorius,03901,Sartorius Right,039012,T,Sartorius_muscle_right,148
+Rectus Femoris,040,Rectus Femoris,04001,Rectus Femoris Left,040011,T,Rectus_femoris_muscle_left,149
+Rectus Femoris,040,Rectus Femoris,04001,Rectus Femoris Right,040012,T,Rectus_femoris_muscle_right,150
+Rectus Femoris,040,Rectus Femoris Vastus Laateralis (Externus),04002,Rectus Femoris Vastus Laateralis (Externus) Left,040021,T,Vastus_lateralis_muscle_left,151
+Rectus Femoris,040,Rectus Femoris Vastus Laateralis (Externus),04002,Rectus Femoris Vastus Laateralis (Externus) Right,040022,T,Vastus_lateralis_muscle_right,152
+Rectus Femoris,040,Rectus Femoris Vastus Intermedius,04003,Rectus Femoris Vastus Intermedius Left,040031,T,Vastus_intermedius_muscle_left,153
+Rectus Femoris,040,Rectus Femoris Vastus Intermedius,04003,Rectus Femoris Vastus Intermedius Right,040032,T,Vastus_intermedius_muscle_right,154
+Rectus Femoris,040,Rectus Femoris Vastus Medialis (Internus),04004,Rectus Femoris Vastus Medialis (Internus) Left,040041,T,Vastus_medialis_muscle_left,155
+Rectus Femoris,040,Rectus Femoris Vastus Medialis (Internus),04004,Rectus Femoris Vastus Medialis (Internus) Right,040042,T,Vastus_medialis_muscle_right,156
+Pectineus,041,Pectineus,04101,Pectineus Left,041011,T,Pectineus_muscle_left,157
+Pectineus,041,Pectineus,04101,Pectineus Right,041012,T,Pectineus_muscle_right,158
+Deep External Rotators,042,Deep External Rotators Piriformis,04201,Deep External Rotators Piriformis Left,042011,T,Piriformis_muscle_left,159
+Deep External Rotators,042,Deep External Rotators Piriformis,04201,Deep External Rotators Piriformis Right,042012,T,Piriformis_muscle_right,160
+Deep External Rotators,042,Deep External Rotators Gemellus Superior,04202,Deep External Rotators Gemellus Superior Left,042021,T,Superior_gemellus_muscle_left,161
+Deep External Rotators,042,Deep External Rotators Gemellus Superior,04202,Deep External Rotators Gemellus Superior Right,042022,T,Superior_gemellus_muscle_right,162
+Deep External Rotators,042,Deep External Rotators Obturator Internus,04203,Deep External Rotators Obturator Internus Left,042031,T,Obturator_internus_left,163
+Deep External Rotators,042,Deep External Rotators Obturator Internus,04203,Deep External Rotators Obturator Internus Right,042032,T,Obturator_internus_right,164
+Deep External Rotators,042,Deep External Rotators Gemellus Inferior,04204,Deep External Rotators Gemellus Inferior Left,042041,T,Inferior_gemellus_muscle_left,165
+Deep External Rotators,042,Deep External Rotators Gemellus Inferior,04204,Deep External Rotators Gemellus Inferior Right,042042,T,Inferior_gemellus_muscle_right,166
+Deep External Rotators,042,Deep External Rotators Obturator Externus,04205,Deep External Rotators Obturator Externus Left,042051,T,Obturator_internus_left,167
+Deep External Rotators,042,Deep External Rotators Obturator Externus,04205,Deep External Rotators Obturator Externus Right,042052,T,Obturator_internus_right,168
+Deep External Rotators,042,Deep External Rotators Quadratus Femoris,04206,Deep External Rotators Quadratus Femoris Left,042061,T,Quadratus_femoris_muscle_left,169
+Deep External Rotators,042,Deep External Rotators Quadratus Femoris,04206,Deep External Rotators Quadratus Femoris Right,042062,T,Quadratus_femoris_muscle_right,170
+Quadriceps,043,Quadraiceps Rectus Femoris,04301,Quadraiceps Rectus Femoris Left,043011,T,Rectus_femoris_muscle_left,171
+Quadriceps,043,Quadraiceps Rectus Femoris,04301,Quadraiceps Rectus Femoris Right,043012,T,Rectus_femoris_muscle_right,172
+Quadriceps,043,Quadraiceps Vastus Lateralis (Externus),04302,Quadraiceps Vastus Lateralis (Externus) Left,043021,T,Vastus_lateralis_muscle_left,173
+Quadriceps,043,Quadraiceps Vastus Lateralis (Externus),04302,Quadraiceps Vastus Lateralis (Externus) Right,043022,T,Vastus_lateralis_muscle_right,174
+Quadriceps,043,Quadraiceps Vastus Intermedius,04303,Quadraiceps Vastus Intermedius Left,043031,T,Vastus_intermedius_muscle_left,175
+Quadriceps,043,Quadraiceps Vastus Intermedius,04303,Quadraiceps Vastus Intermedius Right,043032,T,Vastus_intermedius_muscle_right,176
+Quadriceps,043,Quadraiceps Vastus Medialis (Internus),04304,Quadraiceps Vastus Medialis (Internus) Left,043041,T,Vastus_medialis_muscle_left,177
+Quadriceps,043,Quadraiceps Vastus Medialis (Internus),04304,Quadraiceps Vastus Medialis (Internus) Right,043042,T,Vastus_medialis_muscle_right,178
+Hamstrings,044,Hamstrings Biceps Femoris Long Head,04401,Hamstrings Biceps Femoris Long Head Left,044011,T,Long_head_of_biceps_femoris_left,179
+Hamstrings,044,Hamstrings Biceps Femoris Long Head,04401,Hamstrings Biceps Femoris Long Head Right,044012,T,Long_head_of_biceps_femoris_right,180
+Hamstrings,044,Hamstrings Biceps Femoris Short Head,04402,Hamstrings Biceps Femoris Short Head Left,044021,T,Short_head_of_biceps_femoris_left,181
+Hamstrings,044,Hamstrings Biceps Femoris Short Head,04402,Hamstrings Biceps Femoris Short Head Right,044022,T,Short_head_of_biceps_femoris_right,182
+Hamstrings,044,Hamstrings Semitendinosus,04403,Hamstrings Semitendinosus Left,044031,T,Semitendinosus_muscle_left,183
+Hamstrings,044,Hamstrings Semitendinosus,04403,Hamstrings Semitendinosus Right,044032,T,Semitendinosus_muscle_right,184
+Hamstrings,044,Hamstrings Semimembranosus,04404,Hamstrings Semimembranosus Left,044041,T,Semimembranosus_muscle_left,185
+Hamstrings,044,Hamstrings Semimembranosus,04404,Hamstrings Semimembranosus Right,044042,T,Semimembranosus_muscle_right,186
+Adductors,045,Adductor Brevis,04501,Adductor Brevis Left,045011,T,Adductor_brevis_left,187
+Adductors,045,Adductor Brevis,04501,Adductor Brevis Right,045012,T,Adductor_brevis_right,188
+Adductors,045,Adductor Longus,04502,Adductor Longus Left,045021,T,Adductor_longus_left,189
+Adductors,045,Adductor Longus,04502,Adductor Longus Right,045022,T,Adductor_longus_right,190
+Adductors,045,Adductor Magnus,04503,Adductor Magnus Left,045031,T,Adductor_magnus_left,191
+Adductors,045,Adductor Magnus,04503,Adductor Magnus Right,045032,T,Adductor_magnus_right,192
+Gracilis ,046,Gracilis,04601,Gracilis Left,046011,T,Gracilis_muscle_left,193
+Gracilis ,046,Gracilis,04601,Gracilis Right,046012,T,Gracilis_muscle_right,194
+Adductor Magnus,047,Adductor Brevis,04701,Adductor Brevis Left,047011,T,Adductor_brevis_left,195
+Adductor Magnus,047,Adductor Brevis,04701,Adductor Brevis Right,047012,T,Adductor_brevis_right,196
+Adductor Magnus,047,Adductor Longus,04702,Adductor Longus Left,047021,T,Adductor_longus_left,197
+Adductor Magnus,047,Adductor Longus,04702,Adductor Longus Right,047022,T,Adductor_longus_right,198
+Adductor Magnus,047,Adductor Magnus,04703,Adductor Magnus Left,047031,T,Adductor_magnus_left,199
+Adductor Magnus,047,Adductor Magnus,04703,Adductor Magnus Right,047032,T,Adductor_magnus_right,200
+Gastrocnemius,048,Gastrocnemius Medial Head,04801,Gastrocnemius Medial Head Left,048011,T,Medial_head_of_gastrocnemius_left,201
+Gastrocnemius,048,Gastrocnemius Medial Head,04801,Gastrocnemius Medial Head Right,048012,T,Medial_head_of_gastrocnemius_right,202
+Gastrocnemius,048,Gastrocnemius Lateral Head,04802,Gastrocnemius Lateral Head Left,048021,T,Lateral_head_of_gastrocnemius_left,203
+Gastrocnemius,048,Gastrocnemius Lateral Head,04802,Gastrocnemius Lateral Head Right,048022,T,Lateral_head_of_gastrocnemius_right,204
+Soleus,049,Soleus,04901,Soleus Left,049011,T,Soleus_muscle_left,205
+Soleus,049,Soleus,04901,Soleus Right,049012,T,Soleus_muscle_right,206
+Tibialis Anterior,050,Tibialis Anterior,05001,Tibialis Anterior Left,050011,T,Tibialis_anterior_muscle_left,207
+Tibialis Anterior,050,Tibialis Anterior,05001,Tibialis Anterior Right,050012,T,Tibialis_anterior_muscle_right,208
+Popilteus,051,Popliteus,05101,Popliteus Left,051011,T,Popliteus_muscle_left,209
+Popilteus,051,Popliteus,05101,Popliteus Right,051012,T,Popliteus_muscle_right,210

@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		9F2BE2812C59509900337BB4 /* muscle_anatomy.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9F2BE2802C59509900337BB4 /* muscle_anatomy.usdz */; };
 		9F2BE2832C595AE100337BB4 /* finalanatomy.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 9F2BE2822C595AE100337BB4 /* finalanatomy.usdz */; };
+		9F2BE2882C59691B00337BB4 /* muscleHeadData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9F2BE2862C59691B00337BB4 /* muscleHeadData.csv */; };
+		9F2BE2892C59691B00337BB4 /* exerciseData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9F2BE2872C59691B00337BB4 /* exerciseData.csv */; };
+		9F2BE28B2C5969F500337BB4 /* ExerciseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2BE28A2C5969F500337BB4 /* ExerciseData.swift */; };
+		9F2BE28F2C59984B00337BB4 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 9F2BE28E2C59984B00337BB4 /* ZIPFoundation */; };
+		9F2E3B062C59D03200D33098 /* USDAParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E3B052C59D03200D33098 /* USDAParser.swift */; };
+		9F2E3B082C5D76EE00D33098 /* mesh_names.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E3B072C5D76EE00D33098 /* mesh_names.csv */; };
+		9F2E3B0A2C5DBC8500D33098 /* muscleGroups.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9F2E3B092C5DBC8500D33098 /* muscleGroups.csv */; };
+		9F2E3B0E2C5FF48100D33098 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E3B0D2C5FF48100D33098 /* Functions.swift */; };
 		9F9543612C593C7800BBAA8D /* Workout3DModelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9543602C593C7800BBAA8D /* Workout3DModelApp.swift */; };
 		9F9543632C593C7800BBAA8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9543622C593C7800BBAA8D /* ContentView.swift */; };
 		9F9543652C593C7900BBAA8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F9543642C593C7900BBAA8D /* Assets.xcassets */; };
@@ -39,7 +47,14 @@
 
 /* Begin PBXFileReference section */
 		9F2BE2802C59509900337BB4 /* muscle_anatomy.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = muscle_anatomy.usdz; sourceTree = "<group>"; };
-		9F2BE2822C595AE100337BB4 /* finalanatomy.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = finalanatomy.usdz; sourceTree = "<group>"; };
+		9F2BE2822C595AE100337BB4 /* finalanatomy.usdz */ = {isa = PBXFileReference; explicitFileType = text; path = finalanatomy.usdz; sourceTree = "<group>"; };
+		9F2BE2862C59691B00337BB4 /* muscleHeadData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = muscleHeadData.csv; sourceTree = "<group>"; };
+		9F2BE2872C59691B00337BB4 /* exerciseData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exerciseData.csv; sourceTree = "<group>"; };
+		9F2BE28A2C5969F500337BB4 /* ExerciseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseData.swift; sourceTree = "<group>"; };
+		9F2E3B052C59D03200D33098 /* USDAParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USDAParser.swift; sourceTree = "<group>"; };
+		9F2E3B072C5D76EE00D33098 /* mesh_names.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mesh_names.csv; sourceTree = "<group>"; };
+		9F2E3B092C5DBC8500D33098 /* muscleGroups.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = muscleGroups.csv; sourceTree = "<group>"; };
+		9F2E3B0D2C5FF48100D33098 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		9F95435D2C593C7800BBAA8D /* Workout3DModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workout3DModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9543602C593C7800BBAA8D /* Workout3DModelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout3DModelApp.swift; sourceTree = "<group>"; };
 		9F9543622C593C7800BBAA8D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2BE28F2C59984B00337BB4 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,13 +95,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F2BE2852C59690D00337BB4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9F2E3B072C5D76EE00D33098 /* mesh_names.csv */,
+				9F2BE2872C59691B00337BB4 /* exerciseData.csv */,
+				9F2BE2862C59691B00337BB4 /* muscleHeadData.csv */,
+				9F2E3B092C5DBC8500D33098 /* muscleGroups.csv */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9F2BE28D2C59984B00337BB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9F9543542C593C7800BBAA8D = {
 			isa = PBXGroup;
 			children = (
+				9F2E3B0D2C5FF48100D33098 /* Functions.swift */,
 				9F95435F2C593C7800BBAA8D /* Workout3DModel */,
 				9F9543752C593C7A00BBAA8D /* Workout3DModelTests */,
 				9F95437F2C593C7A00BBAA8D /* Workout3DModelUITests */,
 				9F95435E2C593C7800BBAA8D /* Products */,
+				9F2BE28D2C59984B00337BB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +138,7 @@
 		9F95435F2C593C7800BBAA8D /* Workout3DModel */ = {
 			isa = PBXGroup;
 			children = (
+				9F2BE2852C59690D00337BB4 /* Resources */,
 				9F2BE2822C595AE100337BB4 /* finalanatomy.usdz */,
 				9F2BE2802C59509900337BB4 /* muscle_anatomy.usdz */,
 				9F9543602C593C7800BBAA8D /* Workout3DModelApp.swift */,
@@ -110,6 +147,8 @@
 				9F9543692C593C7900BBAA8D /* Persistence.swift */,
 				9F95436B2C593C7900BBAA8D /* Workout3DModel.xcdatamodeld */,
 				9F9543662C593C7900BBAA8D /* Preview Content */,
+				9F2BE28A2C5969F500337BB4 /* ExerciseData.swift */,
+				9F2E3B052C59D03200D33098 /* USDAParser.swift */,
 			);
 			path = Workout3DModel;
 			sourceTree = "<group>";
@@ -155,6 +194,9 @@
 			dependencies = (
 			);
 			name = Workout3DModel;
+			packageProductDependencies = (
+				9F2BE28E2C59984B00337BB4 /* ZIPFoundation */,
+			);
 			productName = Workout3DModel;
 			productReference = 9F95435D2C593C7800BBAA8D /* Workout3DModel.app */;
 			productType = "com.apple.product-type.application";
@@ -227,6 +269,9 @@
 				Base,
 			);
 			mainGroup = 9F9543542C593C7800BBAA8D;
+			packageReferences = (
+				9F2BE28C2C59983500337BB4 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+			);
 			productRefGroup = 9F95435E2C593C7800BBAA8D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -243,10 +288,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2BE2892C59691B00337BB4 /* exerciseData.csv in Resources */,
 				9F2BE2832C595AE100337BB4 /* finalanatomy.usdz in Resources */,
 				9F9543682C593C7900BBAA8D /* Preview Assets.xcassets in Resources */,
+				9F2E3B0A2C5DBC8500D33098 /* muscleGroups.csv in Resources */,
+				9F2BE2882C59691B00337BB4 /* muscleHeadData.csv in Resources */,
 				9F2BE2812C59509900337BB4 /* muscle_anatomy.usdz in Resources */,
 				9F9543652C593C7900BBAA8D /* Assets.xcassets in Resources */,
+				9F2E3B082C5D76EE00D33098 /* mesh_names.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,8 +320,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2BE28B2C5969F500337BB4 /* ExerciseData.swift in Sources */,
 				9F95436A2C593C7900BBAA8D /* Persistence.swift in Sources */,
+				9F2E3B0E2C5FF48100D33098 /* Functions.swift in Sources */,
 				9F9543632C593C7800BBAA8D /* ContentView.swift in Sources */,
+				9F2E3B062C59D03200D33098 /* USDAParser.swift in Sources */,
 				9F95436D2C593C7900BBAA8D /* Workout3DModel.xcdatamodeld in Sources */,
 				9F9543612C593C7800BBAA8D /* Workout3DModelApp.swift in Sources */,
 			);
@@ -604,6 +656,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9F2BE28C2C59983500337BB4 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.19;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9F2BE28E2C59984B00337BB4 /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F2BE28C2C59983500337BB4 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9F95436B2C593C7900BBAA8D /* Workout3DModel.xcdatamodeld */ = {
