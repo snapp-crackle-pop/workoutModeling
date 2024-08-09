@@ -29,6 +29,9 @@ struct ContentView: View {
 
     // Muscle Data Loader
     let muscleDataLoader = MuscleDataLoader() // Initialize muscleDataLoader
+    
+    // State for showing/hiding the selector
+    @State private var showSelector = false
 
     var body: some View {
         NavigationView {
@@ -64,6 +67,21 @@ struct ContentView: View {
                         muscleDataLoader: muscleDataLoader // Pass muscleDataLoader here
                     )
                 }
+
+                ExerciseSelector(
+                    selectedExercise: $selectedExercise,
+                    showSelector: $showSelector, // Pass the showSelector binding
+                    exercises: exerciseData.exercises,
+                    onSelectExercise: { exercise in
+                        // Handle selection
+                        selectedExercise = exercise
+                        self.selectedExercise = exercise
+                        self.updateMuscleIDs(for: exercise)
+                        selectedExerciseForForm = exercise
+                        showSelector = true // Hide selector after selection
+                    },
+                    muscleDataLoader: muscleDataLoader // Pass muscleDataLoader here
+                )
 
                 VStack {
                     if showConsole {
@@ -123,54 +141,21 @@ struct ContentView: View {
 
                     HStack {
                         Button(action: {
-                            showingExerciseMenu.toggle()
+                            showSelector.toggle()
                         }) {
-                            Circle()
-                                .fill(Color.blue)
-                                .frame(width: 50, height: 50)
-                                .overlay(
-                                    Image(systemName: "plus")
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 24, weight: .bold))
-                                )
+                            Image(systemName: "plus.circle.fill")
+                                .font(.system(size: 24))
+                                .foregroundColor(.blue)
+                                .padding()
                         }
-                        .padding()
-                        .actionSheet(isPresented: $showingExerciseMenu) {
-                            ActionSheet(
-                                title: Text("Select Exercise"),
-                                buttons: exerciseButtons()
-                            )
-                        }
-
                         Spacer()
                     }
-                    .padding()
+                    .padding(.bottom, 50) // Adjust to be above the DynamicDashboard
                 }
             }
         }
     }
 
-    func exerciseButtons() -> [ActionSheet.Button] {
-        var buttons: [ActionSheet.Button] = exerciseData.exercises.map { exercise in
-            ActionSheet.Button.default(Text(exercise.exerciseName)) {
-                selectedExercise = exercise
-                var muscleNames = [String]()
-                var modelRefs = [String]()
-
-                for muscleID in targetMuscleIDs {
-                    let (muscleName, modelRef) = findModelReferenceNames(for: muscleID)
-                    muscleNames.append(muscleName)
-                    modelRefs.append(contentsOf: modelRef)
-                }
-
-                targetMuscleName = muscleNames.joined(separator: ", ")
-                modelReferenceNames = modelRefs
-            }
-        }
-        buttons.append(.cancel(Text("Cancel")))
-        return buttons
-    }
-    
     func updateMuscleIDs(for exercise: Exercise?) {
         guard let exercise = exercise else { return }
         targetMuscleIDs = extractMuscleIDs(from: exercise.targetMuscleIDs)

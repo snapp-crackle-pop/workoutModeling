@@ -34,6 +34,7 @@
 		9F2E3B882C62DA5B00D33098 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E3B872C62DA5B00D33098 /* HistoryView.swift */; };
 		9F2E3B892C62E20400D33098 /* ExerciseFormTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E3B7E2C604FD200D33098 /* ExerciseFormTile.swift */; };
 		9F2E3B8B2C63CE6300D33098 /* ExerciseCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E3B8A2C63CE6300D33098 /* ExerciseCharts.swift */; };
+		9F2E3B8D2C6571D800D33098 /* ExerciseSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E3B8C2C6571D800D33098 /* ExerciseSelector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		9F2E3B852C62BD3100D33098 /* keyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardToolbar.swift; sourceTree = "<group>"; };
 		9F2E3B872C62DA5B00D33098 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		9F2E3B8A2C63CE6300D33098 /* ExerciseCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCharts.swift; sourceTree = "<group>"; };
+		9F2E3B8C2C6571D800D33098 /* ExerciseSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSelector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		9F2E3B202C6004F500D33098 = {
 			isa = PBXGroup;
 			children = (
+				9F2E3B8C2C6571D800D33098 /* ExerciseSelector.swift */,
 				9F2E3B8A2C63CE6300D33098 /* ExerciseCharts.swift */,
 				9F2E3B802C604FF100D33098 /* Models.swift */,
 				9F2E3B7E2C604FD200D33098 /* ExerciseFormTile.swift */,
@@ -385,6 +388,7 @@
 				9F2E3B2F2C6004F500D33098 /* ContentView.swift in Sources */,
 				9F2E3B6E2C60121D00D33098 /* muscleDataLoader.swift in Sources */,
 				9F2E3B8B2C63CE6300D33098 /* ExerciseCharts.swift in Sources */,
+				9F2E3B8D2C6571D800D33098 /* ExerciseSelector.swift in Sources */,
 				9F2E3B7F2C604FD200D33098 /* ExerciseFormTile.swift in Sources */,
 				9F2E3B832C605A8300D33098 /* functions.swift in Sources */,
 				9F2E3B7B2C604FAF00D33098 /* DynamicDashboard.swift in Sources */,

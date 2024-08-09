@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ExerciseExplorerTile: View {
     @Binding var selectedExercise: Exercise? // Binding for the selected exercise
+    @State private var selectedGroup: String? // State for the selected group
     var selectedMuscleName: String?
     var exercises: [Exercise]
     var onSelectExercise: (Exercise) -> Void
@@ -25,12 +26,17 @@ struct ExerciseExplorerTile: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             LazyVStack {
-                ForEach(muscleGroups, id: \.self) { group in
+                if let selectedGroup = selectedGroup {
+                    // Show exercises for the selected group
                     VStack(alignment: .leading) {
+                        Text(selectedGroup)
+                            .font(.headline)
+                            .padding()
+
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack {
-                                ForEach(filteredExercises(for: group), id: \.exerciseID) { exercise in
-                                    ExerciseTile(exercise: exercise, backgroundColor: muscleGroupColors[group] ?? Color.gray.opacity(0.0))
+                                ForEach(filteredExercises(for: selectedGroup), id: \.exerciseID) { exercise in
+                                    ExerciseTile(exercise: exercise, backgroundColor: muscleGroupColors[selectedGroup] ?? Color.gray.opacity(0.0))
                                         .onTapGesture {
                                             selectedExercise = exercise // Update the selected exercise
                                             onSelectExercise(exercise)
@@ -38,17 +44,41 @@ struct ExerciseExplorerTile: View {
                                 }
                             }
                         }
+                        .padding()
+
+                        Button(action: {
+                            self.selectedGroup = nil
+                        }) {
+                            Text("Back to Muscle Groups")
+                                .font(.caption)
+                                .padding(8)
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
+                        .padding()
                     }
-                    .background(Color.white.opacity(0.1))
-                    .cornerRadius(10)
-                    .padding() // Add padding around each group
-                    .scrollTargetLayout() // Enable layout support for snapping
+                } else {
+                    // Show muscle group nodes
+                    ForEach(muscleGroups, id: \.self) { group in
+                        Button(action: {
+                            self.selectedGroup = group
+                        }) {
+                            Text(group)
+                                .font(.headline)
+                                .padding()
+                                .background(muscleGroupColors[group] ?? Color.gray.opacity(0.5))
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                .frame(maxWidth: .infinity)
+                        }
+                        .padding(.horizontal)
+                    }
                 }
             }
+            .padding(.vertical, 5)
+            .frame(height: 150) // Adjust height to accommodate the explorer and charts
         }
-        .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
-        .safeAreaPadding(.vertical, 5)
-        .frame(height: 150) // Adjust height to accommodate the explorer and charts
     }
 
     private var muscleGroups: [String] {
@@ -64,10 +94,6 @@ struct ExerciseExplorerTile: View {
             return exerciseGroups.contains(group)
         }
         
-        // Log the exercises for the current muscle group
-        //let exerciseNames = filtered.map { $0.exerciseName }
-        //print("Muscle Group: \(group) - Exercises: \(exerciseNames.joined(separator: ", "))")
-        
         return filtered
     }
 
@@ -81,17 +107,14 @@ struct ExerciseExplorerTile: View {
         // Use compactMap to filter and transform the muscle IDs into muscle groups
         let groups: [String] = ids.compactMap { id -> String? in
             guard let intID = Int(id) else {
-                //print("Invalid muscle ID: \(id)")
                 return nil
             }
 
             if let muscleGroup = muscleDataLoader.muscles.first(where: { $0.muscleID == intID })?.muscleGroup {
-                //print("Muscle ID: \(intID), Group: \(muscleGroup)")
                 return muscleGroup
             } else {
-                //print("No muscle group found for ID: \(intID)")
+                return nil
             }
-            return nil
         }
 
         return groups
@@ -105,12 +128,11 @@ struct ExerciseTile: View {
     var body: some View {
         VStack {
             Text(exercise.exerciseName)
-                .font(.subheadline)
-                .padding()
+                .font(.caption2)
                 .multilineTextAlignment(.center) // Allow multiline
         }
-        .frame(width: 120, height: 100)
+        .frame(width: 100, height: 60)
         .background(backgroundColor)
-        .cornerRadius(10)
+        .cornerRadius(20)
     }
 }
