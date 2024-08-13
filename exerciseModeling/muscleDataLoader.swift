@@ -14,7 +14,7 @@ struct MuscleData: Identifiable {
     var muscleGroup: String
     var muscleGroupID: Int
     var headType: String
-    var headTypeID: Int
+    var headTypeID: String // Changed to String to preserve leading zeros
     var uniqueHead: String
     var uniqueHeadID: Int
     var chiralityFlag: String
@@ -48,7 +48,7 @@ class MuscleDataLoader {
                         muscleGroup: columns[4].trimmingCharacters(in: .whitespacesAndNewlines),
                         muscleGroupID: Int(columns[5].trimmingCharacters(in: .whitespacesAndNewlines)) ?? 0,
                         headType: columns[6].trimmingCharacters(in: .whitespacesAndNewlines),
-                        headTypeID: Int(columns[7].trimmingCharacters(in: .whitespacesAndNewlines)) ?? 0,
+                        headTypeID: columns[7].trimmingCharacters(in: .whitespacesAndNewlines), // Keep as String to preserve leading zeros
                         uniqueHead: columns[8].trimmingCharacters(in: .whitespacesAndNewlines),
                         uniqueHeadID: Int(columns[9].trimmingCharacters(in: .whitespacesAndNewlines)) ?? 0,
                         chiralityFlag: columns[10].trimmingCharacters(in: .whitespacesAndNewlines),

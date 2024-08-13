@@ -13,7 +13,7 @@ struct ExerciseChartsTile: View {
     @FetchRequest private var exerciseInstances: FetchedResults<ExerciseInstance>
     
     @State private var currentDate: Date = Date()
-    @State private var viewMode: ChartViewMode = .day
+    @State private var viewMode: ChartViewMode = .week
 
     init(exercise: Exercise) {
         self.exercise = exercise

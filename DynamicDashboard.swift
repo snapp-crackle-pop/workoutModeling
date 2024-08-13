@@ -9,7 +9,7 @@ struct DynamicDashboard: View {
     @Binding var selectedExerciseForForm: Exercise?
     @Binding var exerciseInputs: [ExerciseInstance]
     var onSelectExercise: (Exercise) -> Void
-    var muscleDataLoader: MuscleDataLoader // Add muscleDataLoader
+    var muscleDataLoader: MuscleDataLoader
 
     @State private var activeSection: ActiveSection = .main
 
@@ -28,9 +28,17 @@ struct DynamicDashboard: View {
 
                 Spacer()
             }
-            .background(Color.black.opacity(1.0))
+            .background(Color(UIColor(named: "ModelBackgroundColor") ?? .black))
             .cornerRadius(25)
             .padding([.leading, .trailing, .top], 5)
+            .overlay(
+                RoundedRectangle(cornerRadius: 25)
+                    .stroke(Color.clear)
+                    .shadow(color: .black.opacity(0.5), radius: -4, x: 2, y: 2)
+                    .clipShape(RoundedRectangle(cornerRadius: 25))
+                    .shadow(color: .white.opacity(0.5), radius: -4, x: -2, y: -2)
+                    .clipShape(RoundedRectangle(cornerRadius: 25))
+            )
             .onTapGesture {
                 withAnimation {
                     isVisible.toggle()
@@ -45,15 +53,6 @@ struct DynamicDashboard: View {
                             menuTiles
                         case .exerciseExplorer:
                             VStack {
-                                ExerciseExplorerTile(
-                                    selectedExercise: $selectedExercise, // Pass the selected exercise binding
-                                    selectedMuscleName: muscleNames.first,
-                                    exercises: exerciseData.exercises,
-                                    onSelectExercise: onSelectExercise,
-                                    muscleDataLoader: muscleDataLoader, // Pass muscleDataLoader
-                                    exerciseInstances: exerciseInputs // Pass exerciseInstances
-                                )
-                                
                                 // Display chart as a separate tile
                                 if let selectedExercise = selectedExercise {
                                     ExerciseChartsTile(exercise: selectedExercise)
@@ -76,8 +75,7 @@ struct DynamicDashboard: View {
                         case .history:
                             HistoryView()
                         case .data:
-                            Text("Data section is not implemented yet.")
-                                .padding()
+                            DataView() // Navigate to DataView
                         }
                     }
                     .padding(.top, 10)
@@ -88,7 +86,7 @@ struct DynamicDashboard: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: isVisible ? UIScreen.main.bounds.height * 0.5 : 65)
-        .background(Color.gray.opacity(0.2))
+        .background(Color.modelBackground.opacity(0.9))
         .cornerRadius(30)
         .gesture(
             DragGesture()
@@ -117,7 +115,7 @@ struct DynamicDashboard: View {
             MenuTile(title: "Exercise Explorer", action: { activeSection = .exerciseExplorer })
             MenuTile(title: "Exercise Form", action: { activeSection = .exerciseForm })
             MenuTile(title: "History", action: { activeSection = .history })
-            MenuTile(title: "Data", action: { activeSection = .data })
+            MenuTile(title: "Data", action: { activeSection = .data }) // Data section added
         }
     }
 
@@ -133,6 +131,8 @@ struct DynamicDashboard: View {
     }
 }
 
+
+
 struct MenuTile: View {
     let title: String
     let action: () -> Void
@@ -143,7 +143,7 @@ struct MenuTile: View {
                 .font(.headline)
                 .frame(maxWidth: .infinity)
                 .frame(height: 60)
-                .background(Color.blue.opacity(0.8))
+                .background(Color.menuGray.opacity(0.8))
                 .foregroundColor(.white)
                 .cornerRadius(10)
                 .padding(.horizontal)

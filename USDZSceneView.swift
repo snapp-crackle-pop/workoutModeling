@@ -3,23 +3,25 @@ import SceneKit
 
 struct USDZSceneView: UIViewRepresentable {
     @Binding var selectedExercise: Exercise?
-        @Binding var targetMuscleIDs: [String]
-        @Binding var synergistMuscleIDs: [String]
-        @Binding var dynamicStabilizerMuscleIDs: [String]
-        @Binding var stabilizerMuscleIDs: [String]
-        @Binding var antagonistStabilizerMuscleIDs: [String]
-        @Binding var targetMuscleName: String?
-        @Binding var modelReferenceNames: [String]
-        @Binding var touchedMeshName: String
-        @Binding var highlightedNode: SCNNode?
-        @Binding var selectedMuscleName: String? // Use a single string for selected muscle
+    @Binding var targetMuscleIDs: [String]
+    @Binding var synergistMuscleIDs: [String]
+    @Binding var dynamicStabilizerMuscleIDs: [String]
+    @Binding var stabilizerMuscleIDs: [String]
+    @Binding var antagonistStabilizerMuscleIDs: [String]
+    @Binding var targetMuscleName: String?
+    @Binding var modelReferenceNames: [String]
+    @Binding var touchedMeshName: String
+    @Binding var highlightedNode: SCNNode?
+    @Binding var selectedMuscleName: String? // Use a single string for selected muscle
+    @Binding var activeMuscleGroups: [String] // Active muscle groups
+    var muscleGroupColors: [String: UIColor] // Muscle group colors
 
     func makeUIView(context: Context) -> SCNView {
         let sceneView = SCNView()
         sceneView.scene = setupScene()
         sceneView.allowsCameraControl = true
         sceneView.autoenablesDefaultLighting = true
-        sceneView.backgroundColor = UIColor.black
+        sceneView.backgroundColor = .clear // Set SCNView background to clear
 
         // Add tap gesture recognizer
         let tapGestureRecognizer = UITapGestureRecognizer(target: context.coordinator, action: #selector(context.coordinator.handleTap(_:)))
@@ -29,7 +31,18 @@ struct USDZSceneView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: SCNView, context: Context) {
-        colorMeshes(sceneView: uiView)
+        if activeMuscleGroups.isEmpty {
+            // No active muscle groups, color based on selected exercise
+            if let _ = selectedExercise {
+                colorMeshesForExercise(sceneView: uiView)
+            } else {
+                // No exercise selected, reset the model to default
+                resetMeshColors(sceneView: uiView)
+            }
+        } else {
+            // Active muscle groups present, color based on groups
+            colorMeshesForGroups(sceneView: uiView)
+        }
     }
 
     func makeCoordinator() -> Coordinator {
@@ -95,9 +108,8 @@ struct USDZSceneView: UIViewRepresentable {
     }
 
     private func assignNamesToNodes(rootNode: SCNNode, meshNames: [String]) {
-        
         let meshNames = loadMeshReferenceNames().sorted()
-        
+
         var nodeIndex = 0
         rootNode.enumerateChildNodes { (node, _) in
             if let _ = node.geometry, nodeIndex < meshNames.count {
@@ -113,17 +125,24 @@ struct USDZSceneView: UIViewRepresentable {
         }
     }
 
-    private func colorMeshes(sceneView: SCNView) {
+    private func resetMeshColors(sceneView: SCNView) {
         guard let scene = sceneView.scene else { return }
 
         // Reset all meshes to default color
         scene.rootNode.enumerateChildNodes { (node, _) in
             if let _ = node.geometry {
                 let material = SCNMaterial()
-                material.diffuse.contents = UIColor.white
+                material.diffuse.contents = UIColor(named:"ModelGrayColor") ?? .systemGray
                 node.geometry?.materials = [material]
             }
         }
+    }
+
+    private func colorMeshesForExercise(sceneView: SCNView) {
+        guard let scene = sceneView.scene else { return }
+
+        // Reset all meshes to default color
+        resetMeshColors(sceneView: sceneView)
 
         // Helper function to apply color to specific nodes
         func applyColor(to nodes: [String], color: UIColor) {
@@ -133,36 +152,88 @@ struct USDZSceneView: UIViewRepresentable {
                         let material = SCNMaterial()
                         material.diffuse.contents = color
                         node.geometry?.materials = [material]
-                        // Log which node is being colored and the color applied
-                        //print("Coloring node: \(node.name ?? "Unnamed") with color: \(color)")
                     }
                 }
             }
         }
 
-        // Apply colors based on muscle types
-        //print("Applying color for target muscles")
-        applyColor(to: extractModelReferenceNames(from: targetMuscleIDs), color: UIColor.systemRed) // Target muscles
-
-        //print("Applying color for synergist muscles")
-        applyColor(to: extractModelReferenceNames(from: synergistMuscleIDs), color: UIColor.systemPink) // Synergist
-
-        //print("Applying color for dynamic stabilizers")
-        applyColor(to: extractModelReferenceNames(from: dynamicStabilizerMuscleIDs), color: UIColor.orange) // Dynamic Stabilizer
-
-        //print("Applying color for stabilizers")
-        applyColor(to: extractModelReferenceNames(from: stabilizerMuscleIDs), color: UIColor.yellow) // Stabilizer
-
-        //print("Applying color for antagonist stabilizers")
-        applyColor(to: extractModelReferenceNames(from: antagonistStabilizerMuscleIDs), color: UIColor.cyan) // Antagonist Stabilizer
+        // Apply colors based on the selected exercise
+        applyColor(to: extractModelReferenceNames(from: targetMuscleIDs), color: UIColor(named: "TargetMuscleColor") ?? .systemRed) // Target muscles
+        applyColor(to: extractModelReferenceNames(from: synergistMuscleIDs), color: UIColor(named: "SynergistMuscleColor") ?? .systemPink) // Synergist
+        applyColor(to: extractModelReferenceNames(from: dynamicStabilizerMuscleIDs), color: UIColor(named: "DynamicStabilizerMuscleColor") ?? .orange) // Dynamic Stabilizer
+        applyColor(to: extractModelReferenceNames(from: stabilizerMuscleIDs), color: UIColor(named: "StabilizerMuscleColor") ?? .yellow) // Stabilizer
+        applyColor(to: extractModelReferenceNames(from: antagonistStabilizerMuscleIDs), color: UIColor(named: "AntagonistStabilizerMuscleColor") ?? .cyan) // Antagonist Stabilizer
 
         // Highlight the selected node
         if let highlightedNode = highlightedNode {
             let material = SCNMaterial()
-            material.diffuse.contents = UIColor.green
+            material.diffuse.contents = UIColor(named:"SelectionColor") ?? .systemGreen
             highlightedNode.geometry?.materials = [material]
-            //print("Highlighting node: \(highlightedNode.name ?? "Unnamed") with green")
         }
+    }
+
+    private func colorMeshesForGroups(sceneView: SCNView) {
+        guard let scene = sceneView.scene else { return }
+
+        // Reset all meshes to default color
+        resetMeshColors(sceneView: sceneView)
+
+        // Apply colors based on the active muscle groups
+        applyColorsForActiveMuscleGroups(scene: scene)
+    }
+
+    private func applyColorsForActiveMuscleGroups(scene: SCNScene) {
+        // Load the muscle correlations data
+        let muscleCorrelations = loadMuscleCorrelations()
+
+        // Helper function to apply color to specific nodes
+        func applyColor(to nodes: [String], color: UIColor) {
+            for modelReferenceName in nodes {
+                scene.rootNode.enumerateChildNodes { (node, _) in
+                    if let _ = node.geometry, node.name == modelReferenceName {
+                        let material = SCNMaterial()
+                        material.diffuse.contents = color
+                        node.geometry?.materials = [material]
+                    }
+                }
+            }
+        }
+
+        for muscleGroup in activeMuscleGroups {
+            if let correlatedData = muscleCorrelations[muscleGroup] {
+                let color = muscleGroupColors[muscleGroup] ?? UIColor.red // Default color if not found
+                applyColor(to: correlatedData.map { $0.modelReferenceName }, color: color)
+            }
+        }
+    }
+
+    private func loadMuscleCorrelations() -> [String: [(headTypeID: String, modelReferenceName: String)]] {
+        guard let path = Bundle.main.path(forResource: "MuscleCoorelations", ofType: "csv") else {
+            print("MuscleCoorelations.csv file not found")
+            return [:]
+        }
+
+        var muscleCorrelations: [String: [(headTypeID: String, modelReferenceName: String)]] = [:]
+
+        do {
+            let csvData = try String(contentsOfFile: path)
+            let rows = csvData.components(separatedBy: "\n").dropFirst()
+
+            for row in rows {
+                let columns = row.components(separatedBy: ",")
+                if columns.count > 11 {
+                    let muscleGroup = columns[4].trimmingCharacters(in: .whitespacesAndNewlines)
+                    let headTypeID = columns[7].trimmingCharacters(in: .whitespacesAndNewlines)
+                    let modelReferenceName = columns[11].trimmingCharacters(in: .whitespacesAndNewlines)
+
+                    muscleCorrelations[muscleGroup, default: []].append((headTypeID, modelReferenceName))
+                }
+            }
+        } catch {
+            print("Error reading MuscleCoorelations.csv file: \(error.localizedDescription)")
+        }
+
+        return muscleCorrelations
     }
 
     func extractModelReferenceNames(from muscleIDs: [String]) -> [String] {
@@ -194,7 +265,7 @@ struct USDZSceneView: UIViewRepresentable {
             print("Error reading muscleHeadData.csv file: \(error.localizedDescription)")
         }
 
-        return modelReferenceNames // this is the functional output for modelReferenceNames. For each muscleID we are returning the modelReferenceName from the muscleCoorelations list.
+        return modelReferenceNames
     }
 
     class Coordinator: NSObject {
@@ -223,7 +294,7 @@ struct USDZSceneView: UIViewRepresentable {
                 // Set new highlight
                 parent.highlightedNode = node
                 let material = SCNMaterial()
-                material.diffuse.contents = UIColor.green
+                material.diffuse.contents = UIColor(named:"SelectionColor") ?? .systemGreen
                 node.geometry?.materials = [material]
 
                 // Update selected muscle name
@@ -235,10 +306,9 @@ struct USDZSceneView: UIViewRepresentable {
                 parent.selectedMuscleName = nil
             }
         }
-        }
     }
 
-    func loadMeshReferenceNames() -> [String] { // is this used?
+    func loadMeshReferenceNames() -> [String] {
         guard let path = Bundle.main.path(forResource: "mesh_names", ofType: "csv") else {
             print("mesh_names.csv file not found")
             return []
@@ -262,4 +332,54 @@ struct USDZSceneView: UIViewRepresentable {
 
         return meshNames
     }
+}
 
+struct USDZSceneViewContainer: View {
+    @State private var selectedExercise: Exercise?
+    @State private var targetMuscleIDs: [String] = []
+    @State private var synergistMuscleIDs: [String] = []
+    @State private var dynamicStabilizerMuscleIDs: [String] = []
+    @State private var stabilizerMuscleIDs: [String] = []
+    @State private var antagonistStabilizerMuscleIDs: [String] = []
+    @State private var targetMuscleName: String?
+    @State private var modelReferenceNames: [String] = []
+    @State private var touchedMeshName: String = ""
+    @State private var highlightedNode: SCNNode?
+    @State private var selectedMuscleName: String?
+    @State private var activeMuscleGroups: [String] = []
+    
+    var muscleGroupColors: [String: UIColor] = [
+        "Neck": .red,
+        "Shoulders": .green,
+        "Upper Arms": .blue,
+        "Forearms": .orange,
+        "Back": .purple,
+        "Chest": .yellow,
+        "Waist": .brown,
+        "Hips": .systemPink,
+        "Thighs": .systemIndigo,
+        "Calves": .cyan
+    ]
+
+    var body: some View {
+        ZStack {
+            Color.green.edgesIgnoringSafeArea(.all) // Set the background color to green
+            USDZSceneView(
+                selectedExercise: $selectedExercise,
+                targetMuscleIDs: $targetMuscleIDs,
+                synergistMuscleIDs: $synergistMuscleIDs,
+                dynamicStabilizerMuscleIDs: $dynamicStabilizerMuscleIDs,
+                stabilizerMuscleIDs: $stabilizerMuscleIDs,
+                antagonistStabilizerMuscleIDs: $antagonistStabilizerMuscleIDs,
+                targetMuscleName: $targetMuscleName,
+                modelReferenceNames: $modelReferenceNames,
+                touchedMeshName: $touchedMeshName,
+                highlightedNode: $highlightedNode,
+                selectedMuscleName: $selectedMuscleName,
+                activeMuscleGroups: $activeMuscleGroups,
+                muscleGroupColors: muscleGroupColors
+            )
+            .edgesIgnoringSafeArea(.all)
+        }
+    }
+}

@@ -35,6 +35,8 @@
 		9F2E3B892C62E20400D33098 /* ExerciseFormTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E3B7E2C604FD200D33098 /* ExerciseFormTile.swift */; };
 		9F2E3B8B2C63CE6300D33098 /* ExerciseCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E3B8A2C63CE6300D33098 /* ExerciseCharts.swift */; };
 		9F2E3B8D2C6571D800D33098 /* ExerciseSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E3B8C2C6571D800D33098 /* ExerciseSelector.swift */; };
+		9F962DC42C6ABEDE006F20B3 /* InnerShadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F962DC32C6ABEDE006F20B3 /* InnerShadows.swift */; };
+		9F962DC62C6AC839006F20B3 /* dataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F962DC52C6AC839006F20B3 /* dataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,10 @@
 		9F2E3B872C62DA5B00D33098 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		9F2E3B8A2C63CE6300D33098 /* ExerciseCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCharts.swift; sourceTree = "<group>"; };
 		9F2E3B8C2C6571D800D33098 /* ExerciseSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSelector.swift; sourceTree = "<group>"; };
+		9F962DC12C6AAC1F006F20B3 /* studio.hdr */ = {isa = PBXFileReference; lastKnownFileType = file; path = studio.hdr; sourceTree = "<group>"; };
+		9F962DC22C6AAC1F006F20B3 /* night.hdr */ = {isa = PBXFileReference; lastKnownFileType = file; path = night.hdr; sourceTree = "<group>"; };
+		9F962DC32C6ABEDE006F20B3 /* InnerShadows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerShadows.swift; sourceTree = "<group>"; };
+		9F962DC52C6AC839006F20B3 /* dataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,8 @@
 		9F2E3B202C6004F500D33098 = {
 			isa = PBXGroup;
 			children = (
+				9F962DC52C6AC839006F20B3 /* dataView.swift */,
+				9F962DC32C6ABEDE006F20B3 /* InnerShadows.swift */,
 				9F2E3B8C2C6571D800D33098 /* ExerciseSelector.swift */,
 				9F2E3B8A2C63CE6300D33098 /* ExerciseCharts.swift */,
 				9F2E3B802C604FF100D33098 /* Models.swift */,
@@ -199,6 +207,8 @@
 		9F2E3B5C2C60050D00D33098 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				9F962DC22C6AAC1F006F20B3 /* night.hdr */,
+				9F962DC12C6AAC1F006F20B3 /* studio.hdr */,
 				9F2E3B632C600C0F00D33098 /* finalanatomy.usdz */,
 			);
 			path = assets;
@@ -380,10 +390,12 @@
 			files = (
 				9F2E3B6C2C60106C00D33098 /* dynamicSelector.swift in Sources */,
 				9F2E3B812C604FF100D33098 /* Models.swift in Sources */,
+				9F962DC62C6AC839006F20B3 /* dataView.swift in Sources */,
 				9F2E3B7D2C604FC100D33098 /* ExerciseExplorerTile.swift in Sources */,
 				9F2E3B612C6005F600D33098 /* structures.swift in Sources */,
 				9F2E3B862C62BD3100D33098 /* keyboardToolbar.swift in Sources */,
 				9F2E3B392C6004F600D33098 /* exerciseModeling.xcdatamodeld in Sources */,
+				9F962DC42C6ABEDE006F20B3 /* InnerShadows.swift in Sources */,
 				9F2E3B362C6004F600D33098 /* Persistence.swift in Sources */,
 				9F2E3B2F2C6004F500D33098 /* ContentView.swift in Sources */,
 				9F2E3B6E2C60121D00D33098 /* muscleDataLoader.swift in Sources */,

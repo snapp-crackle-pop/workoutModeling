@@ -30,12 +30,41 @@ struct ContentView: View {
     // Muscle Data Loader
     let muscleDataLoader = MuscleDataLoader() // Initialize muscleDataLoader
     
-    // State for showing/hiding the selector
+    // State for active muscle groups
+    @State private var activeMuscleGroups: [String] = [] // Added activeMuscleGroups state
+
+    // State to toggle the ExerciseSelector visibility
     @State private var showSelector = false
+
+    // Muscle group colors
+    private let muscleGroupColors: [String: UIColor] = [
+        "Neck": UIColor(named: "NeckColor") ?? .red,
+        "Shoulders": UIColor(named: "ShouldersColor") ?? .green,
+        "Upper Arms": UIColor(named: "UpperArmsColor") ?? .blue,
+        "Forearms": UIColor(named: "ForearmsColor") ?? .orange,
+        "Back": UIColor(named: "BackColor") ?? .purple,
+        "Chest": UIColor(named: "ChestColor") ?? .yellow,
+        "Waist": UIColor(named: "WaistColor") ?? .brown,
+        "Hips": UIColor(named: "HipsColor") ?? .systemPink,
+        "Thighs": UIColor(named: "ThighsColor") ?? .systemIndigo,
+        "Calves": UIColor(named: "CalvesColor") ?? .cyan
+    ]
+
+    
+    // State to manage the button's position
+    @State private var selectorButtonPosition: CGPoint = CGPoint(x: 50, y: UIScreen.main.bounds.height - 150) // Initial position lower left
 
     var body: some View {
         NavigationView {
             ZStack {
+                
+                LinearGradient(
+                    gradient: Gradient(colors: [.black, .modelBackground]),
+                                startPoint: .top,
+                                endPoint: .bottom
+                            )
+                            .edgesIgnoringSafeArea(.all)
+                
                 VStack {
                     USDZSceneView(
                         selectedExercise: $selectedExercise,
@@ -48,13 +77,15 @@ struct ContentView: View {
                         modelReferenceNames: $modelReferenceNames,
                         touchedMeshName: $touchedMeshName,
                         highlightedNode: $highlightedNode,
-                        selectedMuscleName: $selectedMuscleName // Single muscle name
+                        selectedMuscleName: $selectedMuscleName,
+                        activeMuscleGroups: $activeMuscleGroups, // Pass activeMuscleGroups
+                        muscleGroupColors: muscleGroupColors // Pass muscleGroupColors
                     )
                     .edgesIgnoringSafeArea(.all)
 
                     DynamicDashboard(
                         isVisible: $isDashboardVisible,
-                        muscleNames: $selectedMuscleNames, // List of selected muscles
+                        muscleNames: $selectedMuscleNames,
                         exerciseData: exerciseData,
                         selectedExercise: $selectedExercise,
                         selectedExerciseForForm: $selectedExerciseForForm,
@@ -64,96 +95,79 @@ struct ContentView: View {
                             self.updateMuscleIDs(for: exercise)
                             selectedExerciseForForm = exercise
                         },
-                        muscleDataLoader: muscleDataLoader // Pass muscleDataLoader here
+                        muscleDataLoader: muscleDataLoader
                     )
                 }
 
-                ExerciseSelector(
-                    selectedExercise: $selectedExercise,
-                    showSelector: $showSelector, // Pass the showSelector binding
-                    exercises: exerciseData.exercises,
-                    onSelectExercise: { exercise in
-                        // Handle selection
-                        selectedExercise = exercise
-                        self.selectedExercise = exercise
-                        self.updateMuscleIDs(for: exercise)
-                        selectedExerciseForForm = exercise
-                        showSelector = true // Hide selector after selection
-                    },
-                    muscleDataLoader: muscleDataLoader // Pass muscleDataLoader here
-                )
-
+                // Top right corner: "Deselect All" button
                 VStack {
-                    if showConsole {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text("Latest Selection (Exercise): \(selectedExercise?.exerciseName ?? "None")")
-                                .font(.headline)
+                    HStack {
+                        Spacer()
 
-                            Text("Target Muscle (Muscle_ID): \(targetMuscleIDs.joined(separator: ", "))")
-                                .font(.subheadline)
-
-                            Text("Synergist Muscle IDs: \(synergistMuscleIDs.joined(separator: ", "))")
-                                .font(.subheadline)
-
-                            Text("Dynamic Stabilizer IDs: \(dynamicStabilizerMuscleIDs.joined(separator: ", "))")
-                                .font(.subheadline)
-
-                            Text("Stabilizer IDs: \(stabilizerMuscleIDs.joined(separator: ", "))")
-                                .font(.subheadline)
-
-                            Text("Antagonist Stabilizer IDs: \(antagonistStabilizerMuscleIDs.joined(separator: ", "))")
-                                .font(.subheadline)
-
-                            Text("Dependent Muscle Name (Muscle): \(targetMuscleName ?? "None")")
-                                .font(.subheadline)
-
-                            Text("Model Reference Name(s): \(modelReferenceNames.joined(separator: ", "))")
-                                .font(.subheadline)
-
-                            Text("Touched Mesh Name: \(touchedMeshName)")
-                                .font(.subheadline)
+                        Button(action: {
+                            deselectAll()
+                        }) {
+                            Image(systemName: "xmark.circle")
+                                .font(.system(size: 24))
+                                .foregroundColor(.gray)
+                                .padding()
                         }
-                        .padding()
-                        .background(Color.black.opacity(0.7))
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding()
                     }
-
                     Spacer()
                 }
 
+                // Draggable "Toggle Selector" button
                 VStack {
-                    HStack {
-                        Button(action: {
-                            showConsole.toggle()
-                        }) {
-                            Image(systemName: "info.circle")
-                                .font(.system(size: 24))
-                                .foregroundColor(.white)
-                                .padding()
-                        }
-
-                        Spacer()
-                    }
-
                     Spacer()
-
                     HStack {
-                        Button(action: {
-                            showSelector.toggle()
-                        }) {
-                            Image(systemName: "plus.circle.fill")
-                                .font(.system(size: 24))
-                                .foregroundColor(.blue)
-                                .padding()
-                        }
                         Spacer()
                     }
-                    .padding(.bottom, 50) // Adjust to be above the DynamicDashboard
+                }
+                .overlay(
+                    DraggableButton(
+                        position: $selectorButtonPosition,
+                        action: { showSelector.toggle() },
+                        imageName: showSelector ? "xmark.circle.fill" : "plus.circle.fill"
+                    )
+                )
+
+                // Conditionally show the ExerciseSelector
+                if showSelector {
+                    ExerciseSelector(
+                                        selectedExercise: $selectedExercise,
+                                        showSelector: $showSelector,
+                                        activeMuscleGroups: $activeMuscleGroups, // Add this in the correct order
+                                        exercises: exerciseData.exercises,
+                                        onSelectExercise: { exercise in
+                                            // Handle selection
+                                            selectedExercise = exercise
+                                            self.selectedExercise = exercise
+                                            self.updateMuscleIDs(for: exercise)
+                                            selectedExerciseForForm = exercise
+                                            showSelector = true // Hide selector after selection
+                                        },
+                                        muscleDataLoader: muscleDataLoader // Pass muscleDataLoader here
+                                    )
                 }
             }
         }
+        .onAppear {
+            loadSelectorButtonPosition() // Load position on view appear
+        }
+    }
+
+    func deselectAll() {
+        // Reset selected exercise and muscle states
+        selectedExercise = nil
+        selectedExerciseForForm = nil
+        targetMuscleIDs = []
+        synergistMuscleIDs = []
+        dynamicStabilizerMuscleIDs = []
+        stabilizerMuscleIDs = []
+        antagonistStabilizerMuscleIDs = []
+        selectedMuscleName = nil
+        selectedMuscleNames = []
+        activeMuscleGroups = []
     }
 
     func updateMuscleIDs(for exercise: Exercise?) {
@@ -205,5 +219,57 @@ struct ContentView: View {
         }
 
         return (muscleName, modelReferenceNames)
+    }
+
+    // Load selector button position from UserDefaults
+    func loadSelectorButtonPosition() {
+        let x = UserDefaults.standard.double(forKey: "selectorButtonPositionX")
+        let y = UserDefaults.standard.double(forKey: "selectorButtonPositionY")
+        if x != 0 && y != 0 {
+            selectorButtonPosition = CGPoint(x: x, y: y)
+        }
+    }
+
+    // Save selector button position to UserDefaults
+    func saveSelectorButtonPosition() {
+        UserDefaults.standard.set(selectorButtonPosition.x, forKey: "selectorButtonPositionX")
+        UserDefaults.standard.set(selectorButtonPosition.y, forKey: "selectorButtonPositionY")
+    }
+}
+
+struct DraggableButton: View {
+    @Binding var position: CGPoint
+    var action: () -> Void
+    var imageName: String
+    
+    @State private var dragOffset: CGSize = .zero
+    
+    var body: some View {
+        Image(systemName: imageName)
+            .font(.system(size: 24))
+            .foregroundColor(.gray)
+            .opacity(0.6)
+            .position(x: position.x + dragOffset.width, y: position.y + dragOffset.height)
+            .gesture(
+                DragGesture()
+                    .onChanged { value in
+                        self.dragOffset = value.translation
+                    }
+                    .onEnded { value in
+                        self.position.x += value.translation.width
+                        self.position.y += value.translation.height
+                        self.dragOffset = .zero
+                        savePosition() // Save position on drag end
+                    }
+            )
+            .onTapGesture {
+                action()
+            }
+            .padding()
+    }
+    
+    private func savePosition() {
+        UserDefaults.standard.set(position.x, forKey: "selectorButtonPositionX")
+        UserDefaults.standard.set(position.y, forKey: "selectorButtonPositionY")
     }
 }
