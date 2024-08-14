@@ -22,15 +22,16 @@ struct DynamicDashboard: View {
             HStack {
                 Text(headerTitle)
                     .font(.headline)
+                    .foregroundColor(.modelGray)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .multilineTextAlignment(.center)
                     .padding()
 
                 Spacer()
             }
-            .background(Color(UIColor(named: "ModelBackgroundColor") ?? .black))
+            .background(Color(.modelBackground.opacity(0.3)))
+            .shadow(color: .black.opacity(0.4), radius:4, x:0, y:4)
             .cornerRadius(25)
-            .padding([.leading, .trailing, .top], 5)
             .overlay(
                 RoundedRectangle(cornerRadius: 25)
                     .stroke(Color.clear)
@@ -48,34 +49,29 @@ struct DynamicDashboard: View {
             if isVisible {
                 ScrollView {
                     VStack(spacing: 20) {
-                        switch activeSection {
-                        case .main:
-                            menuTiles
-                        case .exerciseExplorer:
-                            VStack {
-                                // Display chart as a separate tile
-                                if let selectedExercise = selectedExercise {
-                                    ExerciseChartsTile(exercise: selectedExercise)
-                                        .frame(height: 350)
-                                        .padding(.horizontal)
-                                        .background(Color.black.opacity(0.0))
-                                        .cornerRadius(10)
-                                        .padding(.top, 10)
-                                }
+                        if activeSection == .main {
+                            if let selectedExercise = selectedExercise {
+                                // Show ExerciseChartsTile when an exercise is selected
+                                ExerciseChartsTile(exercise: selectedExercise)
+                                    .frame(height: 350)
+                                    .padding(.horizontal)
+                                    .background(Color.black.opacity(0.0))
+                                    //.shadow(color: .black, radius: 5, x:0, y:5)
+                                    .cornerRadius(10)
+                            } else {
+                                // Display the menu tiles when no exercise is selected
+                                menuTiles
                             }
-                        case .exerciseForm:
-                            ExerciseFormTile(
-                                selectedExercise: $selectedExerciseForForm,
-                                exercises: exerciseData.exercises,
-                                onSelectExercise: onSelectExercise,
-                                onSubmit: { exerciseInstance in
-                                    exerciseInputs.append(exerciseInstance)
-                                }
-                            )
-                        case .history:
+                        } else if activeSection == .history {
+                            // Display HistoryView
                             HistoryView()
-                        case .data:
-                            DataView() // Navigate to DataView
+                                .frame(height: 350)
+                                .padding(.horizontal)
+                        } else if activeSection == .data {
+                            // Display DataView
+                            DataView()
+                                .frame(height: 350)
+                                .padding(.horizontal)
                         }
                     }
                     .padding(.top, 10)
@@ -86,7 +82,7 @@ struct DynamicDashboard: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: isVisible ? UIScreen.main.bounds.height * 0.5 : 65)
-        .background(Color.modelBackground.opacity(0.9))
+        .background(Color.modelBackground.opacity(0.2))
         .cornerRadius(30)
         .gesture(
             DragGesture()
@@ -110,14 +106,16 @@ struct DynamicDashboard: View {
         )
     }
 
+
     private var menuTiles: some View {
         VStack(spacing: 20) {
             MenuTile(title: "Exercise Explorer", action: { activeSection = .exerciseExplorer })
             MenuTile(title: "Exercise Form", action: { activeSection = .exerciseForm })
-            MenuTile(title: "History", action: { activeSection = .history })
-            MenuTile(title: "Data", action: { activeSection = .data }) // Data section added
+            MenuTile(title: "History", action: { activeSection = .history })  // Add this line
+            MenuTile(title: "Data", action: { activeSection = .data })        // Add this line
         }
     }
+
 
     private var headerTitle: String {
         var components: [String] = []
@@ -131,8 +129,6 @@ struct DynamicDashboard: View {
     }
 }
 
-
-
 struct MenuTile: View {
     let title: String
     let action: () -> Void
@@ -143,7 +139,7 @@ struct MenuTile: View {
                 .font(.headline)
                 .frame(maxWidth: .infinity)
                 .frame(height: 60)
-                .background(Color.menuGray.opacity(0.8))
+                .background(Color.menuGray.opacity(0.2))
                 .foregroundColor(.white)
                 .cornerRadius(10)
                 .padding(.horizontal)
