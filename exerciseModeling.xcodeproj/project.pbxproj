@@ -39,6 +39,7 @@
 		9F64A5EC2C6BF0B6002975C3 /* settingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64A5EB2C6BF0B6002975C3 /* settingsView.swift */; };
 		9F64A5EE2C6BF0DE002975C3 /* groupRingsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64A5ED2C6BF0DE002975C3 /* groupRingsChart.swift */; };
 		9F64A5F02C6BF0FE002975C3 /* reccomendationsBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64A5EF2C6BF0FE002975C3 /* reccomendationsBoard.swift */; };
+		9F64A5F22C6E9AA6002975C3 /* exerciseData3.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9F64A5F12C6E9AA6002975C3 /* exerciseData3.csv */; };
 		9F962DC42C6ABEDE006F20B3 /* InnerShadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F962DC32C6ABEDE006F20B3 /* InnerShadows.swift */; };
 		9F962DC62C6AC839006F20B3 /* dataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F962DC52C6AC839006F20B3 /* dataView.swift */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,7 @@
 		9F64A5EB2C6BF0B6002975C3 /* settingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsView.swift; sourceTree = "<group>"; };
 		9F64A5ED2C6BF0DE002975C3 /* groupRingsChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = groupRingsChart.swift; sourceTree = "<group>"; };
 		9F64A5EF2C6BF0FE002975C3 /* reccomendationsBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reccomendationsBoard.swift; sourceTree = "<group>"; };
+		9F64A5F12C6E9AA6002975C3 /* exerciseData3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exerciseData3.csv; sourceTree = "<group>"; };
 		9F962DC12C6AAC1F006F20B3 /* studio.hdr */ = {isa = PBXFileReference; lastKnownFileType = file; path = studio.hdr; sourceTree = "<group>"; };
 		9F962DC22C6AAC1F006F20B3 /* night.hdr */ = {isa = PBXFileReference; lastKnownFileType = file; path = night.hdr; sourceTree = "<group>"; };
 		9F962DC32C6ABEDE006F20B3 /* InnerShadows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerShadows.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				9F2E3B652C600C2B00D33098 /* exerciseData.csv */,
+				9F64A5F12C6E9AA6002975C3 /* exerciseData3.csv */,
 				9F2E3B662C600C2B00D33098 /* mesh_names.csv */,
 				9F2E3B692C600C5200D33098 /* MuscleCoorelations.csv */,
 			);
@@ -370,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F64A5F22C6E9AA6002975C3 /* exerciseData3.csv in Resources */,
 				9F2E3B672C600C2B00D33098 /* exerciseData.csv in Resources */,
 				9F2E3B642C600C0F00D33098 /* finalanatomy.usdz in Resources */,
 				9F2E3B682C600C2B00D33098 /* mesh_names.csv in Resources */,

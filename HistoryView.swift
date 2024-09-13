@@ -34,6 +34,7 @@ struct HistoryView: View {
                             HStack {
                                 Text("Exercise").bold().frame(maxWidth: .infinity, alignment: .center)
                                 Text("Date").bold().frame(width: 70, alignment: .center)
+                                Text("ID").bold().frame(width: 70, alignment: .center)
                                 Text("Reps").bold().frame(width: 30, alignment: .center)
                                 Text("Weight").bold().frame(width: 40, alignment: .center)
                                 Text("Dur.").bold().frame(width: 50, alignment: .center)
@@ -52,6 +53,7 @@ struct HistoryView: View {
                                         .multilineTextAlignment(.center)
                                     Text(formattedDate(instance.inputDateTime))
                                         .frame(width: 70, alignment: .center)
+                                    Text("\(instance.id)").frame(width: 30, alignment: .center)
                                     Text("\(instance.reps)").frame(width: 30, alignment: .center)
                                     Text("\(instance.weight) lbs").frame(width: 40, alignment: .center)
                                     Text("\(instance.duration) sec").frame(width: 50, alignment: .center)
@@ -65,7 +67,7 @@ struct HistoryView: View {
                             }
                         }
                     }
-                    .padding(.horizontal)
+                    //.padding(.horizontal)
                 }
                 //.padding(.horizontal)
             }

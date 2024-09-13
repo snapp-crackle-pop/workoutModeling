@@ -56,7 +56,7 @@ struct ExerciseSelector: View {
 
     private var muscleGroups: [String] {
         let groups = exercises.flatMap { exercise in
-            extractMuscleGroups(from: exercise.targetMuscleIDs)
+            extractMuscleGroups(from: exercise)
         }
         return Array(Set(groups)).sorted() // Unique and sorted list of muscle groups
     }
@@ -181,30 +181,74 @@ struct ExerciseSelector: View {
         return CGPoint(x: positionX, y: positionY)
     }
 
-    private func filteredExercises(for group: String) -> [Exercise] {
-        exercises.filter { exercise in
-            let exerciseGroups = extractMuscleGroups(from: exercise.targetMuscleIDs)
-            return exerciseGroups.contains(group)
+    private func extractMuscleGroups(from exercise: Exercise) -> [String] {
+        func muscleGroups(from muscleIDString: String) -> [String] {
+            return muscleIDString
+                .components(separatedBy: "] [") // Split by the closing and opening bracket
+                .map { $0.replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "") }
+                .compactMap { Int($0.trimmingCharacters(in: .whitespacesAndNewlines)) }
+                .compactMap { muscleID in
+                    muscleDataLoader.muscles.first(where: { $0.muscleID == muscleID })?.muscleGroup
+                }
+        }
+
+        let targetGroups = muscleGroups(from: exercise.targetMuscleIDs)
+
+        if !targetGroups.isEmpty {
+            print("\(exercise.exerciseName) found target muscle groups: \(targetGroups)")
+            return targetGroups
+        } else {
+            print("\(exercise.exerciseName) found with no target muscles")
+
+            let synergistGroups = muscleGroups(from: exercise.synergistMuscleIDs)
+            if !synergistGroups.isEmpty {
+                print("\(exercise.exerciseName) synergist muscles include \(exercise.synergistMuscleIDs)")
+                print("\(exercise.exerciseName) group should be set to \(synergistGroups)")
+                return synergistGroups
+            } else {
+                print("\(exercise.exerciseName) found with no synergist muscles")
+
+                let stabilizerGroups = muscleGroups(from: exercise.stabilizerMuscleIDs)
+                if !stabilizerGroups.isEmpty {
+                    print("\(exercise.exerciseName) stabilizer muscles include \(exercise.stabilizerMuscleIDs)")
+                    print("\(exercise.exerciseName) group should be set to \(stabilizerGroups)")
+                    return stabilizerGroups
+                } else {
+                    print("\(exercise.exerciseName) found with no stabilizer muscles")
+                    return []
+                }
+            }
         }
     }
 
-    private func extractMuscleGroups(from muscleIDs: String) -> [String] {
-        // Split the muscle IDs by commas, trim whitespaces, and remove any brackets
-        let ids = muscleIDs
+    private func filteredExercises(for group: String) -> [Exercise] {
+        let filtered = exercises.filter { exercise in
+            let exerciseGroups = extractMuscleGroups(from: exercise)
+            let containsGroup = exerciseGroups.contains(group)
+            print("Checking \(exercise.exerciseName) in group \(group): \(containsGroup)")
+            return containsGroup
+        }
+        print("Filtered exercises for group \(group): \(filtered.map { $0.exerciseName })")
+        return filtered
+    }
+
+
+
+    //private func muscleGroups(from muscleIDs: [Int]) -> [String] {
+    //    return muscleIDs.compactMap { id in
+    //        muscleDataLoader.muscles.first(where: { $0.muscleID == id })?.muscleGroup
+    //    }
+    //}
+
+
+
+    private func extractMuscleIDs(from muscleIDsString: String) -> [Int] {
+        return muscleIDsString
             .trimmingCharacters(in: CharacterSet(charactersIn: "[] "))
             .split(separator: ",")
-            .map { $0.trimmingCharacters(in: .whitespaces) }
-
-        // Use compactMap to filter and transform the muscle IDs into muscle groups
-        let groups: [String] = ids.compactMap { id -> String? in
-            guard let intID = Int(id) else {
-                return nil
-            }
-            return muscleDataLoader.muscles.first(where: { $0.muscleID == intID })?.muscleGroup
-        }
-
-        return groups
+            .compactMap { Int($0.trimmingCharacters(in: .whitespaces)) }
     }
+
 
     private func updateActiveMuscleGroups() {
         switch selectorState {
@@ -240,6 +284,7 @@ struct ExerciseSelector: View {
         guard let selectedExercise = selectedExercise else { return }
 
         let newInstance = ExerciseInstance(context: viewContext)
+        newInstance.id = UUID()
         newInstance.exerciseName = selectedExercise.exerciseName
         newInstance.inputDateTime = Date()
         newInstance.reps = Int32(reps) ?? 0

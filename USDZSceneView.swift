@@ -82,7 +82,7 @@ struct USDZSceneView: UIViewRepresentable {
             fitCamera.automaticallyAdjustsZRange = true
         } else {
             print("Failed to load the USDZ file.")
-        }
+        } 
 
         // Add ambient light to the scene
         let ambientLightNode = SCNNode()

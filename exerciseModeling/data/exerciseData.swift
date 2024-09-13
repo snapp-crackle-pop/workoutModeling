@@ -74,6 +74,7 @@ class ExerciseData: ObservableObject {
 
                     // Debugging output
                     print("Loaded exercise: \(exerciseName) with target muscles: \(targetMuscleIDs)")
+                    print("Loaded exercise: \(exerciseName) with synergist muscles: \(synergistMuscleIDs)")
                 } else {
                     print("Invalid row: \(row)")
                 }
